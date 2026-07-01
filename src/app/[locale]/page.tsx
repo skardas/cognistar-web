@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DeviceMockup from '@/components/DeviceMockup';
+import ScreenshotGallery from '@/components/ScreenshotGallery';
 import { 
   Brain, ShieldAlert, Cpu, BarChart3, ArrowRight, EyeOff, Sparkles, 
   HelpCircle, ShieldCheck, HeartHandshake, Eye, Award, CheckCircle, BookOpen
@@ -29,16 +30,15 @@ export default function HomePage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as any } }
   };
 
-  // 144 Game Categories Showcase
   const sampleCategories = [
-    { title: "Triangle Operators", desc: "Select correct math symbols (+, -, *, /) dynamically to balance the mathematical equation." },
-    { title: "Shape Composition", desc: "Select polyomino block configurations that perfectly match the target geometric shape." },
-    { title: "Advanced Raven Matrix", desc: "Analyze 3x3 pattern matrices to apply logical rotations, scales, and mirror rules." },
-    { title: "Word Math Cryptography", desc: "Decrypt number relationships encoded in alphabetical vowel and consonant distributions." },
-    { title: "Scale Balance (Terazi)", desc: "Solve algebraic equations visualized dynamically on mechanical balances." },
-    { title: "Wire Trace", desc: "Follow intertwined circuits to map wire paths visually from inputs to correct endpoints." },
-    { title: "Laser & Mirror", desc: "Calculate laser reflection trajectories using 45-degree angle positioning grids." },
-    { title: "Knot Topology", desc: "Solve visual overlaps to predict if pulling a rope configuration will lock or slip." }
+    { title: t('Categories.cat1_title'), desc: t('Categories.cat1_desc') },
+    { title: t('Categories.cat2_title'), desc: t('Categories.cat2_desc') },
+    { title: t('Categories.cat3_title'), desc: t('Categories.cat3_desc') },
+    { title: t('Categories.cat4_title'), desc: t('Categories.cat4_desc') },
+    { title: t('Categories.cat5_title'), desc: t('Categories.cat5_desc') },
+    { title: t('Categories.cat6_title'), desc: t('Categories.cat6_desc') },
+    { title: t('Categories.cat7_title'), desc: t('Categories.cat7_desc') },
+    { title: t('Categories.cat8_title'), desc: t('Categories.cat8_desc') }
   ];
 
   return (
@@ -101,7 +101,7 @@ export default function HomePage() {
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.22.67-2.94 1.52-.63.73-1.18 1.87-1.03 2.97 1.12.09 2.27-.61 2.98-1.43z"/>
                   </svg>
                   <div className="text-start">
-                    <p className="text-[10px] uppercase font-semibold text-slate-400 dark:text-slate-500 tracking-wider">Download on the</p>
+                    <p className="text-[10px] uppercase font-semibold text-slate-400 dark:text-slate-500 tracking-wider">{t('Hero.cta_ios').split(' ')[0]} on the</p>
                     <p className="text-sm font-bold text-slate-900 dark:text-white leading-tight">App Store</p>
                   </div>
                 </a>
@@ -169,7 +169,7 @@ export default function HomePage() {
                   <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{t('Features.f2_desc')}</p>
                 </div>
                 <Link href="/privacy" className="mt-8 flex items-center gap-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                  <span>Read Privacy Standards</span>
+                  <span>{t('Navbar.privacy')}</span>
                   <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -200,7 +200,7 @@ export default function HomePage() {
                   <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{t('Features.f4_desc')}</p>
                 </div>
                 <Link href="/support" className="mt-8 flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                  <span>Parent Portal Settings</span>
+                  <span>{t('Navbar.parent_portal')}</span>
                   <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -209,40 +209,43 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Cognitive ELO Scaling & MMR (New Detailed Section) */}
+        {/* Screenshot Gallery Section (New!) */}
+        <ScreenshotGallery />
+
+        {/* Cognitive ELO Scaling & MMR */}
         <section className="relative py-24 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             
             {/* Text details */}
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Deep Adaptive Architecture</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">{t('MMR.badge')}</span>
               <h2 className="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-                The Cognitive ELO & MMR System
+                {t('MMR.title')}
               </h2>
               <p className="mt-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                CogniStar doesn't rely on pre-set static stages. The backend engine implements an offline **MMR rating system (from 800 to 2500 MMR)** to dynamically calculate appropriate tasks for kids.
+                {t('MMR.desc')}
               </p>
               
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">Response Time Optimization</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Answering correctly in under 3 seconds awards a big MMR boost (+30 ELO), scaling the next task difficulty immediately.</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">{t('MMR.list_item1_title')}</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t('MMR.list_item1_desc')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">Failure Recovery Scaffolding</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">If a child gets stuck at advanced stages (Level 60+), the game initiates visual scaffolding to separate colors from shapes and guide them step-by-step.</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">{t('MMR.list_item2_title')}</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t('MMR.list_item2_desc')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">Ghost Racing Telemetry</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Saves child touch trace velocities (`x, y, timestamp`) to let them race visually against their own past ghost curveline speeds weeks later.</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white text-sm">{t('MMR.list_item3_title')}</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{t('MMR.list_item3_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -251,31 +254,31 @@ export default function HomePage() {
             {/* Visual representation */}
             <div className="rounded-3xl border border-slate-200/60 dark:border-white/5 bg-slate-100 dark:bg-slate-900/20 p-8 shadow-xs relative overflow-hidden">
               <div className="absolute top-0 right-0 -z-10 h-32 w-32 rounded-full bg-purple-500/5 blur-2xl" />
-              <h3 className="font-bold text-slate-900 dark:text-white mb-6">Real-Time MMR Scaling Sample</h3>
+              <h3 className="font-bold text-slate-900 dark:text-white mb-6">{t('MMR.chart_title')}</h3>
               <div className="space-y-4">
                 
                 {/* 1 */}
                 <div className="rounded-2xl bg-white dark:bg-slate-900/60 p-4 border border-slate-200/50 dark:border-white/5">
                   <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="font-semibold text-slate-800 dark:text-slate-300">Grade 1-2 Focus Range</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-300">{t('MMR.grade1_title')}</span>
                     <span className="text-purple-600 dark:text-purple-400 font-bold">MMR 800 - 1500</span>
                   </div>
                   <div className="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                     <div className="h-full w-[45%] bg-linear-to-r from-purple-500 to-indigo-500" />
                   </div>
-                  <p className="text-[10px] text-slate-400 mt-2">Slower timers (60s), enlarged buttons (48px+ touch area) for motor coordination.</p>
+                  <p className="text-[10px] text-slate-400 mt-2">{t('MMR.grade1_desc')}</p>
                 </div>
 
                 {/* 2 */}
                 <div className="rounded-2xl bg-white dark:bg-slate-900/60 p-4 border border-slate-200/50 dark:border-white/5">
                   <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="font-semibold text-slate-800 dark:text-slate-300">Grade 3-4 Advanced Focus Range</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-300">{t('MMR.grade2_title')}</span>
                     <span className="text-indigo-600 dark:text-indigo-400 font-bold">MMR 1500 - 2500</span>
                   </div>
                   <div className="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
                     <div className="h-full w-[85%] bg-linear-to-r from-purple-500 to-indigo-500" />
                   </div>
-                  <p className="text-[10px] text-slate-400 mt-2">Accelerated timers (30s limit), complex 3D perspective tasks, and logic DEV logic dev gates.</p>
+                  <p className="text-[10px] text-slate-400 mt-2">{t('MMR.grade2_desc')}</p>
                 </div>
 
               </div>
@@ -289,10 +292,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-                144 Specialized Brain Game Categories
+                {t('Categories.title')}
               </h2>
               <p className="mt-4 text-base text-slate-600 dark:text-slate-400">
-                CogniStar procedurally renders clean SVGs for every puzzle at runtime. Here is a showcase of featured cognitive sub-games.
+                {t('Categories.subtitle')}
               </p>
             </div>
 
@@ -325,47 +328,47 @@ export default function HomePage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                   <HeartHandshake className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-slate-900 dark:text-white">Zen Mode Controls</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white">{t('Zen.card_title')}</h3>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200/50 dark:border-white/5">
-                  <span className="font-semibold text-slate-800 dark:text-slate-300">Time Countdown Text</span>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">Hidden</span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-300">{t('Zen.label1')}</span>
+                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">{t('Zen.val1')}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200/50 dark:border-white/5">
-                  <span className="font-semibold text-slate-800 dark:text-slate-300">Sudden Screen Vibration</span>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">Disabled</span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-300">{t('Zen.label2')}</span>
+                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">{t('Zen.val2')}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200/50 dark:border-white/5">
-                  <span className="font-semibold text-slate-800 dark:text-slate-300">Pastel Color Filter</span>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">Enabled (0.65 sat)</span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-300">{t('Zen.label3')}</span>
+                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">{t('Zen.val3')}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs p-3.5 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200/50 dark:border-white/5">
-                  <span className="font-semibold text-slate-800 dark:text-slate-300">Tactile Audio Pop Pitch</span>
-                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">Soft Haptics Only</span>
+                  <span className="font-semibold text-slate-800 dark:text-slate-300">{t('Zen.label4')}</span>
+                  <span className="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400">{t('Zen.val4')}</span>
                 </div>
               </div>
             </div>
 
             {/* Zen Mode Text */}
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Neurodivergency Friendly</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">{t('Zen.badge')}</span>
               <h2 className="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-                Zen Mode & Accessibility Tab
+                {t('Zen.title')}
               </h2>
               <p className="mt-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                CogniStar is uniquely optimized for ADHD, Autism, or Sensory Anxiety. The Accessibility settings allow children to train their brains at their own pace without unnecessary timers, strobe animations, or loud buzzer alarms.
+                {t('Zen.desc')}
               </p>
               
               <div className="mt-8 flex gap-4">
                 <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/40 p-4 w-1/2">
-                  <h4 className="font-bold text-slate-900 dark:text-white text-xs">Desaturated Colors</h4>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Calming palette shifts reduce eye strain and sensory spikes.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white text-xs">{t('Zen.c1_title')}</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">{t('Zen.c1_desc')}</p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/40 p-4 w-1/2">
-                  <h4 className="font-bold text-slate-900 dark:text-white text-xs">No Time Stresses</h4>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Focuses entirely on completion accuracy over speed metrics.</p>
+                  <h4 className="font-bold text-slate-900 dark:text-white text-xs">{t('Zen.c2_title')}</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">{t('Zen.c2_desc')}</p>
                 </div>
               </div>
             </div>
@@ -379,24 +382,24 @@ export default function HomePage() {
             <div className="grid gap-12 lg:grid-cols-2 items-center">
               
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-purple-400">Transparent Limits</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-purple-400">{t('Limits.badge')}</span>
                 <h2 className="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-                  Level Trials & Worksheet Calendars
+                  {t('Limits.title')}
                 </h2>
                 <p className="mt-6 text-slate-600 dark:text-slate-400 leading-relaxed">
-                  We've introduced fair, level-based usage limits to replace rigid timed evaluations, giving children space to learn before choosing to upgrade.
+                  {t('Limits.desc')}
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="bg-white dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/5 rounded-2xl p-5">
-                    <span className="text-purple-600 dark:text-purple-400 text-lg font-extrabold">Stages 1-10</span>
-                    <h5 className="font-semibold text-slate-800 dark:text-slate-300 text-xs mt-2">100% Free Level Trial</h5>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Play the first 10 adventure stages offline without committing to memberships.</p>
+                    <span className="text-purple-600 dark:text-purple-400 text-lg font-extrabold">{t('Limits.c1_title')}</span>
+                    <h5 className="font-semibold text-slate-800 dark:text-slate-300 text-xs mt-2">{t('Limits.c1_title')}</h5>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">{t('Limits.c1_desc')}</p>
                   </div>
                   <div className="bg-white dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/5 rounded-2xl p-5">
-                    <span className="text-purple-600 dark:text-purple-400 text-lg font-extrabold">7-Day Window</span>
-                    <h5 className="font-semibold text-slate-800 dark:text-slate-300 text-xs mt-2">Premium PDF Limits</h5>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Premium users can output structured PDF homework worksheets once every 7 days.</p>
+                    <span className="text-purple-600 dark:text-purple-400 text-lg font-extrabold">{t('Limits.c2_title')}</span>
+                    <h5 className="font-semibold text-slate-800 dark:text-slate-300 text-xs mt-2">{t('Limits.c2_title')}</h5>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">{t('Limits.c2_desc')}</p>
                   </div>
                 </div>
               </div>
@@ -413,7 +416,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
                   <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-xs px-3 py-1 text-xs font-semibold text-white">
                     <BookOpen className="h-3.5 w-3.5" />
-                    Parent Dashboard PDF Generator
+                    {t('Limits.label')}
                   </span>
                 </div>
               </div>
