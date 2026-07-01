@@ -22,7 +22,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
-  const dir = locale === 'ar' || locale === 'ku' ? 'rtl' : 'ltr';
+  const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
   return (
     <html lang={locale} dir={dir} className="scroll-smooth">
