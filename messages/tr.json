@@ -1,0 +1,55 @@
+{
+  "Navbar": {
+    "home": "Ana Sayfa",
+    "privacy": "Gizlilik Politikası",
+    "support": "Destek & SSS",
+    "parent_portal": "Veli Paneli"
+  },
+  "Hero": {
+    "title": "Bilişsel Gelişim Yeniden Tanımlandı",
+    "subtitle": "6-9 yaş arası çocukların mantık, hafıza ve uzamsal düşünme becerilerini güçlendirmek için tasarlanmış pedagojik zeka oyunları.",
+    "cta_ios": "App Store'dan İndirin",
+    "cta_android": "Google Play'den Edinin"
+  },
+  "Features": {
+    "title": "Çocuğunuzun Zihinsel Potansiyelini Keşfedin",
+    "subtitle": "Genç beyinleri geliştirmek için uzman pedagoji eşliğinde tasarlanmış 4 temel direk.",
+    "f1_title": "144+ Mantık Oyunu",
+    "f1_desc": "Görsel bulmacalar, ızgara hafıza görevleri ve sayı dizileri.",
+    "f2_title": "%100 Çevrimdışı ve Güvenli",
+    "f2_desc": "Sunucu yok, veri takibi yok, çocuklar için internet gerektirmeden her yerde güvenli.",
+    "f3_title": "Yapay Zeka Destekli Pacing",
+    "f3_desc": "Adaptif odak motoru, oyunların zorluğunu çocuğun öğrenme hızına göre dinamik ayarlar.",
+    "f4_title": "Veli Raporları & PDF Çıktısı",
+    "f4_desc": "Gelişim grafiklerini takip edin ve zayıf olunan konulardan özel PDF çalışma kağıdı basın."
+  },
+  "Privacy": {
+    "title": "Gizlilik Politikası ve Güven",
+    "intro": "CogniStar, tamamen çevrimdışı ve sıfır veri takibi sunan güvenli bir ortamdır. Çocuğunuzun hiçbir verisini harici sunuculara yüklemeyiz.",
+    "coppa_title": "COPPA Uyumluluğu",
+    "coppa_desc": "Çocukların Çevrimiçi Gizliliğini Koruma Yasası'na (COPPA) tam uyumluyuz. Çocuklardan hiçbir ad, e-posta veya konum bilgisi toplanmaz.",
+    "storage_title": "%100 Çevrimdışı Veritabanı",
+    "storage_desc": "Kazanılan tüm yıldızlar, rozetler ve istatistikler cihaz üzerinde şifrelenmiş olarak saklanır."
+  },
+  "Support": {
+    "title": "Destek Merkezi",
+    "subtitle": "Sorularınız mı var veya yardıma mı ihtiyacınız var? Sizin için buradayız.",
+    "faq_title": "Sıkça Sorulan Sorular",
+    "faq_q1": "Adaptif zorluk sistemi nasıl çalışır?",
+    "faq_a1": "Pedagojik odak motorumuz, her aşamadaki doğru ve yanlış cevapları analiz ederek sonraki soruların zorluğunu çocuğun seviyesine göre ayarlar.",
+    "faq_q2": "Uygulama içinde reklam var mı?",
+    "faq_a2": "Hayır, CogniStar çocukların dikkat dağılmadan odaklanabilmesi için tamamen reklamsızdır.",
+    "faq_q3": "Çocuğum telefondan çalışma kağıdı yazdırabilir mi?",
+    "faq_a3": "Evet! Çalışma kağıdı motoru, cihazdan kablosuz olarak doğrudan basılabilen veya paylaşılabilen özel A4 PDF sayfaları hazırlar.",
+    "form_title": "Bize Mesaj Gönderin",
+    "name": "Ad Soyad",
+    "email": "E-posta Adresi",
+    "message": "Mesaj",
+    "submit": "Mesaj Gönder",
+    "success": "Teşekkürler! Mesajınız başarıyla gönderildi."
+  },
+  "Footer": {
+    "copyright": "© 2026 CogniStar. Tüm hakları saklıdır.",
+    "links": "Gizlilik • Kullanım Şartları • Destek"
+  }
+}

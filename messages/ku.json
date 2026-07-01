@@ -1,0 +1,55 @@
+{
+  "Navbar": {
+    "home": "Destpêk",
+    "privacy": "Siyaseta Parastina Daneyan",
+    "support": "Piştgirî & SSS",
+    "parent_portal": "Panela Dêûbavan"
+  },
+  "Hero": {
+    "title": "Pêşvebirina Cognitive Nûjen Bû",
+    "subtitle": "Lîstikên hiş û perwerdeyê yên ji bo zarokên 6 heta 9 salî hatine amadekirin da ku baldarî, lojîk û bîrê xurt bikin.",
+    "cta_ios": "Ji App Store daxînin",
+    "cta_android": "Ji Google Play daxînin"
+  },
+  "Features": {
+    "title": "Hişê Zarokê Xwe Xurt Bikin",
+    "subtitle": "Ji bo geşbûna hişî ya zarokan 4 stûnên sereke yên pedagojiyê keşf bikin.",
+    "f1_title": "Zêdetirî 144 Lîstikên Lojîkê",
+    "f1_desc": "Bulmacayên dîtbarî yên balkêş, erkên bîra ızgarayê û rêzên hejmaran.",
+    "f2_title": "%100 Bêhêl û Ewle (Offline)",
+    "f2_desc": "Bê server, bê şopandin, bi tevahî ewle ji bo zarokan li her derê.",
+    "f3_title": "Fêrbûna Bi Alîkariya Zekaya Çêkirî",
+    "f3_desc": "Motora adaptîv bixweber asta lîstokan li gorî leza fêrbûna zarokê we diguhere.",
+    "f4_title": "Raporên Dêûbavan & PDF",
+    "f4_desc": "Grafîkên pêşveçûnê bişopînin û ji bo mijarên qels rûpelên xebatê yên PDF çap bikin."
+  },
+  "Privacy": {
+    "title": "Siyaseta Parastina Daneyan û Ewlehî",
+    "intro": "CogniStar hate sêwirandin ku bibe hawireke ewle, offline û bê şopandin. Em qet daneyên zarokan ji pêşkêşkerên derve re naşînin.",
+    "coppa_title": "Lihevhatina COPPA",
+    "coppa_desc": "Em bi tevahî li gorî Qanûna Parastina Nepenîtiya Serhêl a Zarokan (COPPA) tevdigerin. Qet nav an e-posteyan ji zarokan kom nakin.",
+    "storage_title": "%100 Veritabanê Offline",
+    "storage_desc": "Hemî stêrk, rozet û pîvanên performansê li ser amûrê bi ewlehî têne hilanîn."
+  },
+  "Support": {
+    "title": "Navenda Piştgiriyê",
+    "subtitle": "Pirsên we hene an alîkariyê dixwazin? Em li vir in da ku alîkariya we bikin.",
+    "faq_title": "Pirsên Pir Tên Pirsîn",
+    "faq_q1": "Pergala zehmetiyê ya adaptîv çawa dixebite?",
+    "faq_a1": "Motora me ya baldarî ya pedagojîk pirsên her qonaxê kontrol dike da ku asta pirsên nû bêyî acizkirina zarok eyar bike.",
+    "faq_q2": "Ma di sepanê de reklam hene?",
+    "faq_a2": "Na, CogniStar bi tevahî bê reklam e ji bo ku bala zarokan belav nebe.",
+    "faq_q3": "Zarokê min dikare ji telefonê kaxizên xebatê çap bike?",
+    "faq_a3": "Belê! Hilberînerê PDFê rûpelên A4 amade dike ku hûn dikarin bixweber bêhêl çap bikin an parve bikin.",
+    "form_title": "Peyamekê Ji Me Re Bişînin",
+    "name": "Nav û Paşnav",
+    "email": "Navnîşana E-posteyê",
+    "message": "Peyam",
+    "submit": "Peyamê Bişîne",
+    "success": "Spas! Peyama we bi serkeftî hate şandin."
+  },
+  "Footer": {
+    "copyright": "© 2026 CogniStar. Hemû maf parastî ne.",
+    "links": "Nepenîtî • Mercên Bikaranînê • Piştgirî"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "Navbar": {
+    "home": "Startseite",
+    "privacy": "Datenschutzerklärung",
+    "support": "Support & FAQ",
+    "parent_portal": "Elternbereich"
+  },
+  "Hero": {
+    "title": "Kognitive Entwicklung neu gedacht",
+    "subtitle": "Pädagogische Gehirntrainingsspiele für Kinder im Alter von 6-9 Jahren zur Förderung von Logik, Gedächtnis und visuellem Denken.",
+    "cta_ios": "Im App Store herunterladen",
+    "cta_android": "Bei Google Play laden"
+  },
+  "Features": {
+    "title": "Fördern Sie das Gehirn Ihres Kindes",
+    "subtitle": "Entdecken Sie die 4 pädagogischen Säulen, die entwickelt wurden, um junge Köpfe zu fordern und zu fördern.",
+    "f1_title": "144+ Logikspiele",
+    "f1_desc": "Spannende visuelle Rätsel, Gittergedächtnisaufgaben und Zahlenreihen.",
+    "f2_title": "100% Offline & Privat",
+    "f2_desc": "Keine Server, kein Tracking, absolut sicher für Kinder, überall zu spielen.",
+    "f3_title": "KI-gesteuertes Tempo",
+    "f3_desc": "Die adaptive Engine passt den Schwierigkeitsgrad dynamisch an das Lerntempo des Kindes an.",
+    "f4_title": "Elternberichte & PDF",
+    "f4_desc": "Verfolgen Sie Fortschrittsgrafiken und drucken Sie Arbeitsblätter zu schwächeren Themen aus."
+  },
+  "Privacy": {
+    "title": "Datenschutz & Vertrauen",
+    "intro": "CogniStar ist als sichere Offline-Umgebung ohne Tracking konzipiert. Wir speichern oder übertragen keine Kinderdaten auf externe Server.",
+    "coppa_title": "COPPA-Konformität",
+    "coppa_desc": "Wir halten uns vollständig an den Children's Online Privacy Protection Act. Es werden keine Namen oder E-Mail-Adressen von Kindern erfasst.",
+    "storage_title": "100% Offline-Datenbank",
+    "storage_desc": "Alle Sterne, Abzeichen und Leistungsindikatoren werden verschlüsselt lokal auf dem Gerät gespeichert."
+  },
+  "Support": {
+    "title": "Support-Center",
+    "subtitle": "Haben Sie Fragen oder benötigen Sie Hilfe? Wir sind für Sie da.",
+    "faq_title": "Häufig gestellte Fragen",
+    "faq_q1": "Wie funktioniert das adaptive Schwierigkeitssystem?",
+    "faq_a1": "Unsere pädagogische Engine prüft die Antworten und passt die nachfolgenden Fragen an, um das Kind zu fordern, ohne es zu frustrieren.",
+    "faq_q2": "Gibt es Werbung in der App?",
+    "faq_a2": "Nein, CogniStar ist komplett werbefrei, damit sich Kinder ohne Ablenkung konzentrieren können.",
+    "faq_q3": "Kann mein Kind Arbeitsblätter vom Handy aus drucken?",
+    "faq_a3": "Ja! Der Arbeitsblatt-Generator erstellt personalisierte A4-PDF-Seiten direkt vom Gerät aus zum kabellosen Drucken.",
+    "form_title": "Schreiben Sie uns",
+    "name": "Name",
+    "email": "E-Mail-Adresse",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet."
+  },
+  "Footer": {
+    "copyright": "© 2026 CogniStar. Alle Rechte vorbehalten.",
+    "links": "Datenschutz • Nutzungsbedingungen • Support"
+  }
+}

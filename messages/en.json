@@ -1,0 +1,55 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "privacy": "Privacy Policy",
+    "support": "Support & FAQ",
+    "parent_portal": "Parent Portal"
+  },
+  "Hero": {
+    "title": "Cognitive Development Reimagined",
+    "subtitle": "Pedagogical brain-training games designed for children aged 6-9 to boost logic, memory, and spatial reasoning skills.",
+    "cta_ios": "Download on the App Store",
+    "cta_android": "Get it on Google Play"
+  },
+  "Features": {
+    "title": "Empower Your Child's Brain",
+    "subtitle": "Discover the 4 key pedagogical pillars designed to stretch and grow young minds.",
+    "f1_title": "144+ Logic Games",
+    "f1_desc": "Engaging visual puzzles, grid memory tasks, and number sequences.",
+    "f2_title": "100% Offline & Private",
+    "f2_desc": "No servers, no tracking, completely safe for children to play anywhere.",
+    "f3_title": "AI-Powered Pacing",
+    "f3_desc": "Adaptive focus engine dynamically scales difficulty to match their learning speed.",
+    "f4_title": "Parental Reports & PDF",
+    "f4_desc": "Track progress graphs and print custom worksheets from weaker topics."
+  },
+  "Privacy": {
+    "title": "Privacy Policy & Trust",
+    "intro": "CogniStar is built to be a safe, offline, and zero-tracking environment. We do not store or transmit any child data to external servers.",
+    "coppa_title": "COPPA Compliance",
+    "coppa_desc": "We comply fully with the Children's Online Privacy Protection Act. No names, email addresses, or coordinates are gathered from kids.",
+    "storage_title": "100% Offline Database",
+    "storage_desc": "All stars, badges, and performance indicators are stored locally using encrypted on-device storage."
+  },
+  "Support": {
+    "title": "Support Center",
+    "subtitle": "Have questions or need assistance? We are here to help.",
+    "faq_title": "Frequently Asked Questions",
+    "faq_q1": "How does the adaptive difficulty system work?",
+    "faq_a1": "Our pedagogical focus engine checks correct and incorrect responses at each stage, adjusting subsequent question parameters to keep the child challenged but not frustrated.",
+    "faq_q2": "Are there any in-app ads?",
+    "faq_a2": "No, CogniStar is completely ad-free to ensure children can focus without distraction.",
+    "faq_q3": "Can my child print worksheets on a phone?",
+    "faq_a3": "Yes! The worksheet generator formats custom A4 PDF pages directly from the device which can be printed wirelessly or shared.",
+    "form_title": "Send Us a Message",
+    "name": "Name",
+    "email": "Email Address",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Thank you! Your message has been sent successfully."
+  },
+  "Footer": {
+    "copyright": "© 2026 CogniStar. All rights reserved.",
+    "links": "Privacy • Terms of Service • Support"
+  }
+}
