@@ -1,9 +1,11 @@
 'use client';
 
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 
 export default function DeviceMockup() {
+  const locale = useLocale();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -55,7 +57,7 @@ export default function DeviceMockup() {
           {/* Screenshot */}
           <div className="absolute inset-0 z-10">
             <Image
-              src="/screenshots/ios/1_adventure_map.png"
+              src={`/screenshots/${locale}/iphone_6_7/1_adventure_map.png`}
               alt="CogniStar iOS Map View"
               fill
               className="object-cover pointer-events-none"
@@ -81,7 +83,7 @@ export default function DeviceMockup() {
           {/* Screenshot */}
           <div className="absolute inset-0 z-10">
             <Image
-              src="/screenshots/android/2_gameplay.png"
+              src={`/screenshots/${locale}/android_phone/2_gameplay.png`}
               alt="CogniStar Android Gameplay"
               fill
               className="object-cover pointer-events-none"
