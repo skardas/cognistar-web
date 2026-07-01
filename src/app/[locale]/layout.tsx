@@ -25,8 +25,23 @@ export default async function LocaleLayout({
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={dir} className="scroll-smooth">
-      <body className="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen selection:bg-purple-500/30 selection:text-purple-200">
+    <html lang={locale} dir={dir} className="scroll-smooth dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('theme') === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  document.documentElement.classList.add('dark');
+                }
+              } catch (_) {}
+            `
+          }}
+        />
+      </head>
+      <body className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen selection:bg-purple-500/30 selection:text-purple-200 transition-colors duration-300">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
