@@ -6,8 +6,11 @@
     "parent_portal": "Veli Paneli"
   },
   "Hero": {
+    "badge": "Adaptif Bilişsel Odak Motoru",
+    "download_on": "Şuradan İndirin:",
+    "get_it_on": "Şuradan Edinin:",
     "title": "Bilişsel Gelişim Yeniden Tanımlandı",
-    "subtitle": "6-9 yaş arası çocukların mantık, hafıza ve uzamsal düşünme becerilerini güçlendirmek için tasarlanmış pedagojik zeka oyunları.",
+    "subtitle": "6-10 yaş arası çocukların mantık, hafıza ve uzamsal düşünme becerilerini güçlendirmek için tasarlanmış pedagojik zeka oyunları.",
     "cta_ios": "App Store'dan İndirin",
     "cta_android": "Google Play'den Edinin"
   },

@@ -6,8 +6,11 @@
     "parent_portal": "Parent Portal"
   },
   "Hero": {
+    "badge": "Adaptive Cognitive Focus Engine",
+    "download_on": "Download on the",
+    "get_it_on": "Get it on",
     "title": "Cognitive Development Reimagined",
-    "subtitle": "Pedagogical brain-training games designed for children aged 6-9 to boost logic, memory, and spatial reasoning skills.",
+    "subtitle": "Pedagogical brain-training games designed for children aged 6-10 to boost logic, memory, and spatial reasoning skills.",
     "cta_ios": "Download on the App Store",
     "cta_android": "Get it on Google Play"
   },

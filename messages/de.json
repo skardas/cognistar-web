@@ -6,8 +6,11 @@
     "parent_portal": "Elternbereich"
   },
   "Hero": {
+    "badge": "Adaptives kognitives Fokus-System",
+    "download_on": "Laden im:",
+    "get_it_on": "Jetzt bei:",
     "title": "Kognitive Entwicklung neu gedacht",
-    "subtitle": "Pädagogische Gehirntrainingsspiele für Kinder im Alter von 6-9 Jahren zur Förderung von Logik, Gedächtnis und visuellem Denken.",
+    "subtitle": "Pädagogische Gehirntrainingsspiele für Kinder im Alter von 6-10 Jahren zur Förderung von Logik, Gedächtnis und visuellem Denken.",
     "cta_ios": "Im App Store herunterladen",
     "cta_android": "Bei Google Play laden"
   },

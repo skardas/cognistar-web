@@ -6,8 +6,11 @@
     "parent_portal": "Panela Dêûbavan"
   },
   "Hero": {
+    "badge": "Motora Fokusa Hişî ya Adaptîf",
+    "download_on": "Daxistin ji:",
+    "get_it_on": "Bi dest bixin li:",
     "title": "Pêşvebirina Cognitive Nûjen Bû",
-    "subtitle": "Lîstikên hiş û perwerdeyê yên ji bo zarokên 6 heta 9 salî hatine amadekirin da ku baldarî, lojîk û bîrê xurt bikin.",
+    "subtitle": "Lîstikên hiş û perwerdeyê yên ji bo zarokên 6 heta 10 salî hatine amadekirin da ku baldarî, lojîk û bîrê xurt bikin.",
     "cta_ios": "Ji App Store daxînin",
     "cta_android": "Ji Google Play daxînin"
   },

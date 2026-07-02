@@ -6,8 +6,11 @@
     "parent_portal": "家长控制台"
   },
   "Hero": {
+    "badge": "自适应认知力调控引擎",
+    "download_on": "下载于:",
+    "get_it_on": "获取于:",
     "title": "重新定义儿童认知开发",
-    "subtitle": "专为6-9岁儿童设计的教育大脑训练益智游戏，全面提升逻辑、记忆力和空间想象力。",
+    "subtitle": "专为6-10岁儿童设计的教育大脑训练益智游戏，全面提升逻辑、记忆力和空间想象力。",
     "cta_ios": "在 App Store 下载",
     "cta_android": "在 Google Play 获取"
   },

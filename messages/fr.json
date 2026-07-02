@@ -6,8 +6,11 @@
     "parent_portal": "Espace Parents"
   },
   "Hero": {
+    "badge": "Moteur de mise au point cognitive adaptative",
+    "download_on": "Télécharger dans:",
+    "get_it_on": "Disponible sur:",
     "title": "Le développement cognitif réinventé",
-    "subtitle": "Des jeux cérébraux pédagogiques conçus pour les enfants de 6 à 9 ans afin de stimuler la logique, la mémoire et le raisonnement spatial.",
+    "subtitle": "Des jeux cérébraux pédagogiques conçus pour les enfants de 6 à 10 ans afin de stimuler la logique, la mémoire et le raisonnement spatial.",
     "cta_ios": "Télécharger dans l'App Store",
     "cta_android": "Disponible sur Google Play"
   },
