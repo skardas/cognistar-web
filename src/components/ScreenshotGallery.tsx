@@ -17,12 +17,12 @@ export default function ScreenshotGallery() {
     { id: '2b_gameplay_laser', label: t('s2b') },
     { id: '2c_gameplay_isometric', label: t('s2c') },
     { id: '2d_gameplay_coding', label: t('s2d') },
-    { id: '3_categories_map', label: t('s3') },
-    { id: '4_badges_trophies', label: t('s4') },
-    { id: '5_accessories_shop', label: t('s5') },
-    { id: '6_daily_warmup', label: t('s6') },
-    { id: '7_parent_dashboard', label: t('s7') },
-    { id: '8_premium_paywall', label: t('s8') }
+    { id: '3_parent_dashboard', label: t('s7') },
+    { id: '4_premium_paywall', label: t('s8') },
+    { id: '5_categories_map', label: t('s3') },
+    { id: '6_badges_trophies', label: t('s4') },
+    { id: '7_accessories_shop', label: t('s5') },
+    { id: '8_daily_warmup', label: t('s6') }
   ];
 
   const handleScroll = (direction: 'left' | 'right') => {

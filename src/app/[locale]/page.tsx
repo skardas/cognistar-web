@@ -411,7 +411,7 @@ export default function HomePage() {
                   <Image 
                     fill
                     className="object-cover opacity-90 select-none pointer-events-none"
-                    src={`/screenshots/${locale}/android_tablet/7_parent_dashboard.png`} 
+                    src={`/screenshots/${locale}/android_tablet/3_parent_dashboard.png`} 
                     alt="CogniStar Parent Dashboard PDF"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
