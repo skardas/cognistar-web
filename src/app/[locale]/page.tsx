@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -15,6 +15,7 @@ import { Link } from '@/i18n/routing';
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale();
 
   const containerVariants = {
     hidden: {},
@@ -410,7 +411,7 @@ export default function HomePage() {
                   <Image 
                     fill
                     className="object-cover opacity-90 select-none pointer-events-none"
-                    src={`/screenshots/${t('Navbar.home') === 'Home' ? 'en' : 'tr'}/android_tablet/7_parent_dashboard.png`} 
+                    src={`/screenshots/${locale}/android_tablet/7_parent_dashboard.png`} 
                     alt="CogniStar Parent Dashboard PDF"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />

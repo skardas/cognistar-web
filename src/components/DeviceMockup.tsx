@@ -83,7 +83,7 @@ export default function DeviceMockup() {
           {/* Screenshot */}
           <div className="absolute inset-0 z-10">
             <Image
-              src={`/screenshots/${locale}/android_phone/2_gameplay.png`}
+              src={`/screenshots/${locale}/android_phone/2a_gameplay_logic.png`}
               alt="CogniStar Android Gameplay"
               fill
               className="object-cover pointer-events-none"
