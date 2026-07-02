@@ -13,7 +13,10 @@ export default function ScreenshotGallery() {
 
   const screens = [
     { id: '1_adventure_map', label: t('s1') },
-    { id: '2_gameplay', label: t('s2') },
+    { id: '2a_gameplay_logic', label: t('s2a') },
+    { id: '2b_gameplay_laser', label: t('s2b') },
+    { id: '2c_gameplay_isometric', label: t('s2c') },
+    { id: '2d_gameplay_coding', label: t('s2d') },
     { id: '3_categories_map', label: t('s3') },
     { id: '4_badges_trophies', label: t('s4') },
     { id: '5_accessories_shop', label: t('s5') },
