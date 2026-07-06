@@ -18,7 +18,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Data Collection & Processing',
-        desc: 'We do not collect, store, or share any personal information from children or adults. Specifically:\n• No registration, signup, or profile fields are sent online.\n• No device identifier tracking, location data, or camera/microphone access is requested.\n• On-Device Database: All stars, ELO progress, level records, unlocked badges, and worksheets are saved 100% locally on the device.'
+        desc: 'We do not collect, store, or share any personal information from children or adults. Specifically:\n• No registration, signup, or profile fields are sent online.\n• No location data or camera/microphone access is requested.\n• Purchase Verification & Device IDs: We process anonymous device identifiers and transaction history solely to verify premium subscriptions and restore purchases. This data is not linked to your identity or used for tracking.\n• On-Device Database: All stars, ELO progress, level records, unlocked badges, and worksheets are saved 100% locally on the device.'
       },
       {
         icon: Lock,
@@ -54,7 +54,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Veri Toplama ve İşleme',
-        desc: 'Çocuklardan veya yetişkinlerden hiçbir kişisel bilgi toplamıyoruz, saklamıyoruz veya paylaşmıyoruz. Özellikle:\n• Kayıt, üyelik veya profil alanları çevrimiçi olarak gönderilmez.\n• Cihaz kimliği takibi, konum verisi veya kamera/mikrofon erişimi istenmez.\n• Cihaz İçi Veritabanı: Kazanılan tüm yıldızlar, ELO ilerlemesi, seviye kayıtları, rozetler ve çalışma kağıtları %100 yerel olarak cihazınızda saklanır.'
+        desc: 'Çocuklardan veya yetişkinlerden hiçbir kişisel bilgi toplamıyoruz, saklamıyoruz veya paylaşmıyoruz. Özellikle:\n• Kayıt, üyelik veya profil alanları çevrimiçi olarak gönderilmez.\n• Konum verisi veya kamera/mikrofon erişimi istenmez.\n• Satın Alım Doğrulama ve Cihaz Kimlikleri: Premium üyelikleri doğrulamak ve satın alımları geri yüklemek amacıyla yalnızca anonim cihaz kimliklerini ve işlem geçmişini işliyoruz. Bu veriler kimliğinizle ilişkilendirilmez veya takip amacıyla kullanılmaz.\n• Cihaz İçi Veritabanı: Kazanılan tüm yıldızlar, ELO ilerlemesi, seviye kayıtları, rozetler ve çalışma kağıtları %100 yerel olarak cihazınızda saklanır.'
       },
       {
         icon: Lock,
@@ -90,7 +90,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Komkirin û Pêvajoya Daneyan',
-        desc: 'Em ti agahiyên kesane ji zarokan an mezinan kom nakin, hilnaynin an parve nakin. Bi taybetî:\n• Ti qeydkirin an qadên profilê bi serhêl nayên şandin.\n• Ti nasnameya cîhazê, daneyên cihanê, an gihîştina kamera/mîkrofonê nayê xwestin.\n• Daneya ser Cîhazê: Hemî stêrk, pêşkeftina ELO, tomarên astê û pelên xebatê 100% li ser cîhazê bi herêmî têne tomar kirin.'
+        desc: 'Em ti agahiyên kesane ji zarokan an mezinan kom nakin, hilnaynin an parve nakin. Bi taybetî:\n• Ti qeydkirin an qadên profilê bi serhêl nayên şandin.\n• Daneyên cihanê, an gihîştina kamera/mîkrofonê nayê xwestin.\n• Verastkirina Kirînê û Nasnameyên Cîhazê: Em tenê nasnameyên cîhazê yên anonîm û dîroka danûstendinê bişopînin da ku abonetiyên premium verast bikin û kirînan vegerînin. Ev dane bi nasnameya we ve ne girêdayî ye û ji bo şopandinê nayê bikar anîn.\n• Daneya ser Cîhazê: Hemî stêrk, pêşkeftina ELO, tomarên astê û pelên xebatê 100% li ser cîhazê bi herêmî têne tomar kirin.'
       },
       {
         icon: Lock,
@@ -126,7 +126,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '٢. جمع البيانات ومعالجتها',
-        desc: 'نحن لا نجمع أو نخزن أو نشارك أي معلومات شخصية للأطفال أو الكبار. على وجه الخصوص:\n• لا يتم إرسال أي بيانات تسجيل أو حساب أو ملفات تعريفية عبر الإنترنت.\n• لا نطلب تتبع معرف الجهاز أو بيانات الموقع أو الوصول إلى الكاميرا/الميكروفون.\n• قاعدة البيانات المحلية: يتم حفظ جميع مستويات التقدم، ونقاط ELO، والجوائز، وأوراق العمل محلياً بالكامل على الجهاز.'
+        desc: 'نحن لا نجمع أو نخزن أو نشارك أي معلومات شخصية للأطفال أو الكبار. على وجه الخصوص:\n• لا يتم إرسال أي بيانات تسجيل أو حساب أو ملفات تعريفية عبر الإنترنت.\n• لا نطلب بيانات الموقع أو الوصول إلى الكاميرا/الميكروفون.\n• التحقق من المشتريات ومعرفات الأجهزة: نقوم بمعالجة معرفات الأجهزة المجهولة وتاريخ المعاملات فقط للتحقق من الاشتراكات المميزة واستعادة المشتريات. لا يتم ربط هذه البيانات بهويتك أو استخدامها لأغراض التتبع.\n• قاعدة البيانات المحلية: يتم حفظ جميع مستويات التقدم، ونقاط ELO، والجوائز، وأوراق العمل محلياً بالكامل على الجهاز.'
       },
       {
         icon: Lock,
@@ -162,7 +162,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Collecte & Traitement des Données',
-        desc: 'Nous ne collectons, ne stockons et ne partageons aucune information personnelle concernant les enfants ou les adultes. En particulier :\n• Aucune inscription ou profil n\'est envoyé en ligne.\n• Aucun identifiant d\'appareil, donnée de localisation ou accès caméra/micro n\'est demandé.\n• Stockage local : Toutes les étoiles, progression ELO, fiches d\'exercices et récompenses sont sauvegardées à 100% sur l\'appareil.'
+        desc: 'Nous ne collectons, ne stockons et ne partageons aucune information personnelle concernant les enfants ou les adultes. En particulier :\n• Aucune inscription ou profil n\'est envoyé en ligne.\n• Aucune donnée de localisation ou accès caméra/micro n\'est demandé.\n• Vérification des achats & identifiants d\'appareil : Nous traitons des identifiants d\'appareil anonymes et l\'historique des transactions uniquement pour vérifier les abonnements premium et restaurer les achats. Ces données ne sont pas liées à votre identité ni utilisées pour le suivi.\n• Stockage local : Toutes les étoiles, progression ELO, fiches d\'exercices et récompenses sont sauvegardées à 100% sur l\'appareil.'
       },
       {
         icon: Lock,
@@ -198,7 +198,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Datenerhebung & -verarbeitung',
-        desc: 'Wir sammeln, speichern oder teilen keinerlei personenbezogene Daten von Kindern oder Erwachsenen. Speziell:\n• Keine Registrierung oder Profile werden online übertragen.\n• Keine Standortdaten, Geräte-IDs oder Kamera-/Mikrofonberechtigungen werden abgefragt.\n• Lokale Speicherung: Alle Spielfortschritte, Sterne, ELO-Werte und Arbeitsblätter werden zu 100 % lokal auf dem Gerät gespeichert.'
+        desc: 'Wir sammeln, speichern oder teilen keinerlei personenbezogene Daten von Kindern oder Erwachsenen. Speziell:\n• Keine Registrierung oder Profile werden online übertragen.\n• Keine Standortdaten oder Kamera-/Mikrofonberechtigungen werden abgefragt.\n• Kaufverifizierung & Geräte-IDs: Wir verarbeiten anonyme Geräte-IDs und den Transaktionsverlauf ausschließlich, um Premium-Abonnements zu verifizieren und Käufe wiederherzustellen. Diese Daten werden nicht mit Ihrer Identität verknüpft oder zu Tracking-Zwecken verwendet.\n• Lokale Speicherung: Alle Spielfortschritte, Sterne, ELO-Werte und Arbeitsblätter werden zu 100 % lokal auf dem Gerät gespeichert.'
       },
       {
         icon: Lock,
@@ -234,7 +234,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. Сбор и обработка данных',
-        desc: 'Мы не собираем, не храним и не передаем третьим лицам личную информацию. В частности:\n• Отсутствует онлайн-регистрация и создание профилей на сервере.\n• Не запрашивается доступ к геолокации, камере, микрофону или идентификаторам устройств.\n• Локальная БД: Звезды, прогресс ELO, награды и рабочие листы сохраняются исключительно на самом устройстве.'
+        desc: 'Мы не собираем, не храним и не передаем третьим лицам личную информацию. В частности:\n• Отсутствует онлайн-регистрация и создание профилей на сервере.\n• Не запрашивается доступ к геолокации, камере или микрофону.\n• Проверка покупок и идентификаторы устройств: Мы обрабатываем анонимные идентификаторы устройств и историю транзаций исключительно для проверки премиум-подписок и восстановления покупок. Эти данные не связаны с вашей личностью и не используются для отслеживания.\n• Локальная БД: Звезды, прогресс ELO, награды и рабочие листы сохраняются исключительно на самом устройстве.'
       },
       {
         icon: Lock,
@@ -270,7 +270,7 @@ const privacyTranslations: Record<string, any> = {
       {
         icon: UserX,
         title: '2. 数据收集与处理',
-        desc: '我们绝不收集、存储或共享任何儿童或成年人的个人数据。具体表现为：\n• 无需在线注册，不收集任何账户或个人资料信息。\n• 不请求追踪设备识别码、位置数据、摄像头或麦克风等敏感权限。\n• 纯本地存储：所有冒险进度、MMR/ELO 评分、解锁徽章及导出的 PDF 练习册均 100% 仅保存在用户设备上。'
+        desc: '我们绝不收集、存储或共享任何儿童或成年人的个人数据。具体表现为：\n• 无需在线注册，不收集任何账户或个人资料信息。\n• 不请求位置数据、摄像头或麦克风等敏感权限。\n• 购买验证与设备 ID：我们处理匿名设备标识符和交易历史记录，仅用于验证高级订阅和恢复购买。此数据不会与您的身份相关联，也不会用于追踪。\n• 纯本地存储：所有冒险进度、MMR/ELO 评分、解锁徽章及导出的 PDF 练习册均 100% 仅保存在用户设备上。'
       },
       {
         icon: Lock,
