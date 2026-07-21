@@ -310,13 +310,41 @@ export default function SupportPage() {
   const locale = (params.locale as string) || 'en';
   const t = supportTranslations[locale] || supportTranslations['en'];
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
+    if (!name || !email || !message) return;
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: '0507a275-5eb7-4029-a1b7-72013f99e3a6',
+          name,
+          email,
+          message,
+          subject: `CogniStar Support Request from ${name}`
+        })
+      });
+
+      if (!res.ok) {
+        window.location.href = `mailto:fodla.media@gmail.com?subject=${encodeURIComponent(`CogniStar Support: ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      }
+    } catch (err) {
+      console.warn('Form submission fetch error, triggering mailto link fallback:', err);
+      window.location.href = `mailto:fodla.media@gmail.com?subject=${encodeURIComponent(`CogniStar Support: ${name}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    } finally {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
+    }
   };
 
   return (
@@ -385,8 +413,21 @@ export default function SupportPage() {
               </h2>
 
               {formSubmitted ? (
-                <div className="rounded-2xl bg-emerald-500/10 border border-emerald-500/30 p-6 text-emerald-600 dark:text-emerald-400 text-sm font-semibold animate-in fade-in duration-300">
-                  {t.success}
+                <div className="space-y-4 animate-in fade-in duration-300">
+                  <div className="rounded-2xl bg-emerald-500/10 border border-emerald-500/30 p-6 text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
+                    {t.success}
+                  </div>
+                  <button
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setName('');
+                      setEmail('');
+                      setMessage('');
+                    }}
+                    className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-900 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors cursor-pointer"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -395,6 +436,8 @@ export default function SupportPage() {
                     <input 
                       type="text" 
                       required 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-purple-500 focus:outline-hidden transition-colors"
                       placeholder="Your name"
                     />
@@ -404,6 +447,8 @@ export default function SupportPage() {
                     <input 
                       type="email" 
                       required 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-purple-500 focus:outline-hidden transition-colors"
                       placeholder="you@example.com"
                     />
@@ -413,15 +458,25 @@ export default function SupportPage() {
                     <textarea 
                       required 
                       rows={4}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-purple-500 focus:outline-hidden transition-colors resize-none"
                       placeholder="How can we help?"
                     />
                   </div>
                   <button 
                     type="submit" 
-                    className="w-full rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 py-3 text-sm font-bold text-white shadow-lg hover:from-purple-500 hover:to-indigo-500 transition-all cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 py-3 text-sm font-bold text-white shadow-lg hover:from-purple-500 hover:to-indigo-500 disabled:opacity-50 transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
-                    {t.submit}
+                    {isSubmitting ? (
+                      <>
+                        <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <span>{t.submit}</span>
+                    )}
                   </button>
                 </form>
               )}
