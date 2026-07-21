@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { useParams } from 'next/navigation';
 import { BarChart3, Printer, ShieldAlert, Award, ChevronRight, FileText } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { getLocalizedStoreLinks } from '@/utils/storeLinks';
 
 const parentPortalTranslations: Record<string, any> = {
   en: {
@@ -101,6 +102,7 @@ export default function ParentPortalPage() {
   const params = useParams();
   const locale = (params.locale as string) || 'en';
   const t = parentPortalTranslations[locale] || parentPortalTranslations['en'];
+  const { appStore, playStore } = getLocalizedStoreLinks(locale);
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors duration-300">
@@ -122,7 +124,7 @@ export default function ParentPortalPage() {
             </p>
             <div id="download" className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="https://apps.apple.com/app/cognistar-brain-training/id6787395641"
+                href={appStore}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3.5 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-slate-900/80 px-6 py-3.5 shadow-lg shadow-purple-500/5 hover:shadow-xl hover:border-purple-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all group duration-200"
@@ -137,7 +139,7 @@ export default function ParentPortalPage() {
               </a>
 
               <a 
-                href="https://play.google.com/store/apps/details?id=com.cognistar.brain"
+                href={playStore}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3.5 rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-slate-900/80 px-6 py-3.5 shadow-lg shadow-purple-500/5 hover:shadow-xl hover:border-purple-500/40 hover:scale-[1.03] active:scale-[0.98] transition-all group duration-200"

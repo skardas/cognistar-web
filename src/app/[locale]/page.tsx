@@ -12,10 +12,12 @@ import {
   HelpCircle, ShieldCheck, HeartHandshake, Eye, Award, CheckCircle, BookOpen
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { getLocalizedStoreLinks } from '@/utils/storeLinks';
 
 export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale();
+  const { appStore, playStore } = getLocalizedStoreLinks(locale);
 
   const containerVariants = {
     hidden: {},
@@ -96,7 +98,7 @@ export default function HomePage() {
                 className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto"
               >
                 <a
-                  href="https://apps.apple.com/app/cognistar-brain-training/id6787395641"
+                  href={appStore}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 px-5 py-3 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all group duration-200"
@@ -111,7 +113,7 @@ export default function HomePage() {
                 </a>
 
                 <a
-                  href="https://play.google.com/store/apps/details?id=com.cognistar.brain"
+                  href={playStore}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 px-5 py-3 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all group duration-200"
