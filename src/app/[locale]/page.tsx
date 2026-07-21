@@ -91,11 +91,14 @@ export default function HomePage() {
 
               {/* Badges */}
               <motion.div
+                id="download"
                 variants={itemVariants}
                 className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto"
               >
                 <a
-                  href="#"
+                  href="https://apps.apple.com/app/cognistar-brain-training/id6787395641"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 px-5 py-3 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all group duration-200"
                 >
                   <svg className="h-6 w-6 fill-slate-900 dark:fill-white" viewBox="0 0 24 24">
@@ -108,7 +111,9 @@ export default function HomePage() {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.cognistar.brain"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900 px-5 py-3 shadow-sm hover:shadow-md hover:border-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all group duration-200"
                 >
                   <svg className="h-6 w-6 fill-slate-900 dark:fill-white" viewBox="0 0 24 24">
