@@ -205,7 +205,7 @@ export default function HomePage() {
                   <h3 className="mt-6 text-xl font-bold text-slate-900 dark:text-white">{t('Features.f4_title')}</h3>
                   <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">{t('Features.f4_desc')}</p>
                 </div>
-                <Link href="/parent-portal" className="mt-8 flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                <Link href="/parent-portal#download" className="mt-8 flex items-center gap-1 text-xs font-bold text-indigo-600 dark:text-indigo-400">
                   <span>{t('Navbar.parent_portal')}</span>
                   <ArrowRight className="h-3 w-3" />
                 </Link>

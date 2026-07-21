@@ -125,7 +125,7 @@ export default function Header() {
           </div>
 
           <Link
-            href="/parent-portal"
+            href="/parent-portal#download"
             className="rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 px-4 py-2 text-xs font-bold text-white shadow-lg shadow-purple-500/25 hover:from-purple-500 hover:to-indigo-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             {t('parent_portal')}
@@ -207,7 +207,7 @@ export default function Header() {
               {t('support')}
             </Link>
             <Link
-              href="/parent-portal"
+              href="/parent-portal#download"
               onClick={() => setMobileMenuOpen(false)}
               className="mt-2 flex w-full items-center justify-center rounded-xl bg-linear-to-r from-purple-600 to-indigo-600 py-3 text-sm font-bold text-white shadow-lg"
             >
