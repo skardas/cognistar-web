@@ -3,297 +3,121 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useParams } from 'next/navigation';
-import { ShieldCheck, Mail, Database, UserX, HeartHandshake, EyeOff, Lock } from 'lucide-react';
+import { ShieldCheck, Mail, Database, Lock, Globe, EyeOff, HeartHandshake, UserX, Scale, type LucideIcon } from 'lucide-react';
 
-const privacyTranslations: Record<string, any> = {
+const privacyTranslations: Record<string, { title: string; intro: string; sections: { icon: LucideIcon; title: string; desc: string }[] }> = {
   en: {
-    title: 'Privacy Policy & COPPA Compliance',
-    intro: 'CogniStar is a safe, offline, and zero-tracking environment designed specifically for kids. This policy explains how we protect children and ensure compliance with App Store and Google Play child-category regulations.',
+    title: "Privacy Policy",
+    intro: "This policy explains what the CogniStar app and this website do with data. In short: the game runs offline and nothing about your child leaves the device. Last updated: 25 October 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Developer & Data Controller',
-        desc: 'CogniStar is developed and operated by Fodla Media. If you have any questions or inquiries regarding child safety or this policy, please contact us at fodla.media@gmail.com.'
-      },
-      {
-        icon: UserX,
-        title: '2. Data Collection & Processing',
-        desc: 'We do not collect, store, or share any personal information from children or adults. Specifically:\n• No registration, signup, or profile fields are sent online.\n• No location data or camera/microphone access is requested.\n• Purchase Verification & Device IDs: We process anonymous device identifiers and transaction history solely to verify premium subscriptions and restore purchases. This data is not linked to your identity or used for tracking.\n• On-Device Database: All stars, ELO progress, level records, unlocked badges, and worksheets are saved 100% locally on the device.'
-      },
-      {
-        icon: Lock,
-        title: '3. Subscriptions & Payments',
-        desc: 'Subscriptions and premium purchases are processed securely by Apple App Store and Google Play Store. Transactions are subject to their respective terms. Fodla Media does not receive, view, or store any credit card numbers or billing details.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. No Advertising & No Analytics',
-        desc: 'To guarantee complete safety for kids:\n• There are no third-party advertisements.\n• No analytics, telemetry, or user-profiling SDKs are integrated into the application.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. COPPA & GDPR Compliance',
-        desc: 'We strictly adhere to COPPA (Children\'s Online Privacy Protection Act) and GDPR. We never collect personal data from children under 13, nor do we process personal data of EU residents.'
-      },
-      {
-        icon: Database,
-        title: '6. Data Retention & Deletion',
-        desc: 'Since all data is stored on-device, you have full control. Deleting the CogniStar app from your device permanently deletes all locally saved progress and settings.'
-      }
+      { icon: Mail, title: "1. Who we are", desc: "CogniStar is developed by Fodla Media, the data controller for the limited data described here. Questions about privacy or child safety: fodla.media@gmail.com." },
+      { icon: Database, title: "2. What stays on the device", desc: "Child profiles, names a parent enters, progress, answers, settings, play-pattern summaries shown in the parent dashboard and worksheets are kept in the device's local storage. They are not uploaded to us or to anyone else." },
+      { icon: Lock, title: "3. What leaves the device", desc: "Only two things use the internet:\n• Subscriptions: when a parent buys or restores Premium, Apple App Store or Google Play and our subscription provider RevenueCat process an anonymous purchase identifier, product and transaction details and subscription status. We never see card or billing details, and no child data is sent.\n• Update check: when the app starts it asks the store whether a newer version exists. This sends the app identifier and, like any internet request, the device's IP address — nothing about the child. Offline, the check is skipped." },
+      { icon: Globe, title: "4. This website", desc: "If you use the contact form, your name, email address and message are sent through the Web3Forms service to our inbox so that we can reply; if it fails, your own email app opens instead. The site sets a single cookie that remembers your language choice and uses no advertising or analytics cookies." },
+      { icon: EyeOff, title: "5. No advertising, no analytics", desc: "The app shows no advertising and contains no analytics, tracking or profiling SDKs. We do not sell personal data." },
+      { icon: HeartHandshake, title: "6. Children", desc: "CogniStar is made for children aged 6-9. The app asks children for no account, email or location. Purchases, settings, sharing and links out of the app sit behind a parental check. We have designed the app with COPPA, the GDPR and Turkey's KVKK in mind; if you believe a child has sent us personal data through the website, contact us and we will delete it." },
+      { icon: UserX, title: "7. Keeping and deleting data", desc: "Data on the device is removed by deleting a profile, using \"Delete all data\" in Settings, or uninstalling the app. Contact-form messages are kept only as long as needed to answer you and then deleted. Purchase records are kept by Apple, Google and RevenueCat under their own policies." },
+      { icon: Scale, title: "8. Your rights and changes", desc: "Under the GDPR and KVKK you can ask us to access, correct or delete personal data we hold about you (in practice, contact-form messages) and object to its processing; write to fodla.media@gmail.com. You may also complain to your data protection authority. If this policy changes, the date above changes with it." },
     ]
   },
   tr: {
-    title: 'Gizlilik Politikası & COPPA Uyumluluğu',
-    intro: 'CogniStar, çocuklar için tasarlanmış güvenli, çevrimdışı ve sıfır takip odaklı bir ortamdır. Bu politika, çocukları nasıl koruduğumuzu ve App Store ile Google Play çocuk kategorisi kurallarına uyumluluğumuzu açıklamaktadır.',
+    title: "Gizlilik Politikası",
+    intro: "Bu politika, CogniStar uygulamasının ve bu web sitesinin verilerle ne yaptığını açıklar. Kısaca: oyun çevrimdışı çalışır ve çocuğunuzla ilgili hiçbir bilgi cihazdan çıkmaz. Son güncelleme: 25 Ekim 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Geliştirici ve Veri Sorumlusu',
-        desc: 'CogniStar, Fodla Media tarafından geliştirilmekte ve işletilmektedir. Çocuk güvenliği veya bu politika hakkındaki sorularınız için bizimle fodla.media@gmail.com adresinden iletişime geçebilirsiniz.'
-      },
-      {
-        icon: UserX,
-        title: '2. Veri Toplama ve İşleme',
-        desc: 'Çocuklardan veya yetişkinlerden hiçbir kişisel bilgi toplamıyoruz, saklamıyoruz veya paylaşmıyoruz. Özellikle:\n• Kayıt, üyelik veya profil alanları çevrimiçi olarak gönderilmez.\n• Konum verisi veya kamera/mikrofon erişimi istenmez.\n• Satın Alım Doğrulama ve Cihaz Kimlikleri: Premium üyelikleri doğrulamak ve satın alımları geri yüklemek amacıyla yalnızca anonim cihaz kimliklerini ve işlem geçmişini işliyoruz. Bu veriler kimliğinizle ilişkilendirilmez veya takip amacıyla kullanılmaz.\n• Cihaz İçi Veritabanı: Kazanılan tüm yıldızlar, ELO ilerlemesi, seviye kayıtları, rozetler ve çalışma kağıtları %100 yerel olarak cihazınızda saklanır.'
-      },
-      {
-        icon: Lock,
-        title: '3. Abonelikler ve Ödemeler',
-        desc: 'Abonelikler ve premium satın alımlar Apple App Store ve Google Play Store tarafından güvenli bir şekilde işlenir. İşlemler ilgili platformların kullanım koşullarına tabidir. Fodla Media kredi kartı veya fatura bilgilerinizi almaz, görmez veya saklamaz.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. Reklamsız ve Takipsiz Arayüz',
-        desc: 'Çocukların tam güvenliğini garanti etmek için:\n• Üçüncü taraf reklamlar kesinlikle bulunmaz.\n• Uygulama içine hiçbir analiz, telemetri veya kullanıcı profili çıkarma aracı (SDK) entegre edilmemiştir.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. COPPA ve KVKK / GDPR Uyumluluğu',
-        desc: 'COPPA (Çocukların Çevrimiçi Gizliliğini Koruma Yasası) ve GDPR/KVKK kurallarına sıkı sıkıya bağlıyız. 13 yaşın altındaki çocuklardan asla kişisel veri toplamayız ve üçüncü şahıslara aktarmayız.'
-      },
-      {
-        icon: Database,
-        title: '6. Veri Saklama ve Silme',
-        desc: 'Tüm veriler cihazınızda yerel olarak saklandığı için tam kontrole sahipsiniz. CogniStar uygulamasını cihazınızdan silmek, yerel olarak kaydedilmiş tüm ilerlemeyi ve ayarları kalıcı olarak siler.'
-      }
+      { icon: Mail, title: "1. Biz kimiz", desc: "CogniStar, burada açıklanan sınırlı verilerin veri sorumlusu olan Fodla Media tarafından geliştirilmektedir. Gizlilik veya çocuk güvenliği soruları için: fodla.media@gmail.com." },
+      { icon: Database, title: "2. Cihazda kalanlar", desc: "Çocuk profilleri, ebeveynin girdiği adlar, ilerleme, yanıtlar, ayarlar, veli panelinde gösterilen oyun davranışı özetleri ve çalışma kağıtları cihazın yerel depolamasında tutulur. Bize veya başka birine yüklenmez." },
+      { icon: Lock, title: "3. Cihazdan çıkanlar", desc: "İnterneti yalnızca iki şey kullanır:\n• Abonelikler: Ebeveyn Premium satın aldığında veya geri yüklediğinde Apple App Store ya da Google Play ile abonelik hizmet sağlayıcımız RevenueCat; anonim bir satın alma kimliğini, ürün ve işlem bilgilerini ve abonelik durumunu işler. Kart veya fatura bilgilerini görmeyiz; çocuğa ait hiçbir veri gönderilmez.\n• Güncelleme kontrolü: Uygulama açılırken mağazaya yeni bir sürüm olup olmadığını sorar. Bu istek uygulamanın kimliğini ve her internet isteğinde olduğu gibi cihazın IP adresini gönderir; çocuğa dair bir şey içermez. Bağlantı yoksa kontrol atlanır." },
+      { icon: Globe, title: "4. Bu web sitesi", desc: "İletişim formunu kullanırsanız adınız, e-posta adresiniz ve mesajınız size yanıt verebilmemiz için Web3Forms hizmeti aracılığıyla e-posta kutumuza iletilir; gönderim başarısız olursa kendi e-posta uygulamanız açılır. Site yalnızca dil tercihinizi hatırlayan tek bir çerez kullanır; reklam veya analiz çerezi kullanmaz." },
+      { icon: EyeOff, title: "5. Reklam ve analiz yok", desc: "Uygulamada reklam gösterilmez; analiz, takip veya profil çıkarma SDK'sı bulunmaz. Kişisel veri satmayız." },
+      { icon: HeartHandshake, title: "6. Çocuklar", desc: "CogniStar 6-9 yaş arası çocuklar için hazırlanmıştır. Uygulama çocuklardan hesap, e-posta veya konum istemez. Satın alma, ayarlar, paylaşım ve uygulama dışına çıkan bağlantılar ebeveyn doğrulamasının arkasındadır. Uygulamayı COPPA, GDPR ve KVKK'yı gözeterek tasarladık; web sitesi üzerinden bir çocuğun bize kişisel veri gönderdiğini düşünüyorsanız bize yazın, sileriz." },
+      { icon: UserX, title: "7. Saklama ve silme", desc: "Cihazdaki veriler profil silinerek, Ayarlar'daki \"Tüm Veriyi Sil\" ile veya uygulama kaldırılarak silinir. İletişim formu mesajları yalnızca size yanıt vermek için gerektiği sürece saklanır, ardından silinir. Satın alma kayıtları Apple, Google ve RevenueCat tarafından kendi politikalarına göre tutulur." },
+      { icon: Scale, title: "8. Haklarınız ve değişiklikler", desc: "KVKK ve GDPR kapsamında hakkınızda tuttuğumuz kişisel verilere (pratikte iletişim formu mesajları) erişmeyi, düzeltilmesini veya silinmesini isteyebilir ve işlenmesine itiraz edebilirsiniz; fodla.media@gmail.com adresine yazmanız yeterli. Kişisel Verileri Koruma Kurumu'na veya ülkenizdeki veri koruma otoritesine şikâyette de bulunabilirsiniz. Politika değişirse yukarıdaki tarih de değişir." },
     ]
   },
   ku: {
-    title: 'Polîtîkaya Parastina Daneyan & Li Gorî COPPA-yê',
-    intro: 'CogniStar jîngeheke ewledar, offline û bê şopandin e ku bi taybetî ji bo zarokan hatî sêwirandin. Ev polîtîka diyar dike ka em çawa zarokan diparêzin û li gorî qaîdeyên App Store û Google Play-ê tevdigerin.',
+    title: "Polîtîkaya Nihêniyê",
+    intro: "Ev polîtîka diyar dike ka sepana CogniStar û ev malper bi daneyan çi dikin. Bi kurtî: lîstik offline dixebite û tiştek li ser zarokê we ji cîhazê dernakeve. Nûkirina dawî: 25 Cotmeh 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Pêşdebir & Berpirsê Daneyan',
-        desc: 'CogniStar ji hêla Fodla Media ve tê pêşxistin û birêvebirin. Ji bo pirsên li ser ewlehiya zarokan an vê polîtîkayê, hûn dikarin bi e-maila fodla.media@gmail.com bi me re têkiliyê daynin.'
-      },
-      {
-        icon: UserX,
-        title: '2. Komkirin û Pêvajoya Daneyan',
-        desc: 'Em ti agahiyên kesane ji zarokan an mezinan kom nakin, hilnaynin an parve nakin. Bi taybetî:\n• Ti qeydkirin an qadên profilê bi serhêl nayên şandin.\n• Daneyên cihanê, an gihîştina kamera/mîkrofonê nayê xwestin.\n• Verastkirina Kirînê û Nasnameyên Cîhazê: Em tenê nasnameyên cîhazê yên anonîm û dîroka danûstendinê bişopînin da ku abonetiyên premium verast bikin û kirînan vegerînin. Ev dane bi nasnameya we ve ne girêdayî ye û ji bo şopandinê nayê bikar anîn.\n• Daneya ser Cîhazê: Hemî stêrk, pêşkeftina ELO, tomarên astê û pelên xebatê 100% li ser cîhazê bi herêmî têne tomar kirin.'
-      },
-      {
-        icon: Lock,
-        title: '3. Abonetî û Teşbîhên Peredanê',
-        desc: 'Kirîna abonetiyê bi ewlehî ji hêla Apple App Store û Google Play Store ve tê kirin. Fodla Media ti agahiyên karta krediyê an fatûreyê wernagire, nabîne û hilnayne.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. Bê Reklam & Bê Analîtîk',
-        desc: 'Ji bo ewlehiya tam a zarokan:\n• Ti reklamên aliyên sêyemîn tune ne.\n• Ti SDK-yên analîtîk an derxistina profîla bikarhêner di sepanê de tune ne.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. Lihevkirina COPPA & GDPR',
-        desc: 'Em bi hişkî li gorî rêgezên COPPA û GDPR tevdigerin. Em qet daneyên kesane ji zarokên di bin 13 saliyê de kom nakin.'
-      },
-      {
-        icon: Database,
-        title: '6. Parastin û Jêbirina Daneyan',
-        desc: 'Ji ber ku hemî dane li ser cîhazê têne tomar kirin, kontrola tam di destê we de ye. Jêbirina sepana CogniStar ji cîhaza we hemî pêşkeftin û mîhengên herêmî bi domdarî jê dibe.'
-      }
+      { icon: Mail, title: "1. Em kî ne", desc: "CogniStar ji hêla Fodla Media ve tê pêşxistin, ku berpirsê daneyên sînordar ên li vir hatine diyarkirin e. Ji bo pirsên nihênî an ewlehiya zarokan: fodla.media@gmail.com." },
+      { icon: Database, title: "2. Tiştên li ser cîhazê dimînin", desc: "Profîlên zarokan, navên ku dêûbav dinivîsin, pêşveçûn, bersiv, mîheng, kurteyên tevgera lîstikê yên di panela dêûbavan de û pelên xebatê di depoya herêmî ya cîhazê de têne parastin. Ji me re an ji kesekî din re nayên barkirin." },
+      { icon: Lock, title: "3. Tiştên ji cîhazê derdikevin", desc: "Tenê du tişt înternetê bikar tînin:\n• Abonetî: Dema dêûbav Premium dikire an vedigerîne, Apple App Store an Google Play û peydakarê me yê abonetiyê RevenueCat nasnameyek kirînê ya anonîm, agahiyên hilber û danûstendinê û rewşa abonetiyê pêvajo dikin. Em agahiyên kartê nabînin û daneyên zarokan nayên şandin.\n• Kontrola nûkirinê: Dema sepan vedibe ji firotgehê dipirse ka guhertoyek nû heye an na. Ev nasnameya sepanê û navnîşana IP ya cîhazê dişîne — tiştek li ser zarokê tune. Bê girêdan kontrol nayê kirin." },
+      { icon: Globe, title: "4. Ev malper", desc: "Heke hûn forma têkiliyê bikar bînin, nav, e-name û peyama we bi rêya karûbarê Web3Forms digihîje qutiya me da ku em bersivê bidin; heke neçe, sepana e-nameya we vedibe. Malper tenê çerezek ku zimanê we bi bîr tîne bikar tîne; çerezên reklam an analîtîkê tune ne." },
+      { icon: EyeOff, title: "5. Bê reklam, bê analîtîk", desc: "Sepan reklaman nîşan nade û ti SDK-yên analîtîk, şopandin an profîlkirinê tê de tune ne. Em daneyên kesane nafiroşin." },
+      { icon: HeartHandshake, title: "6. Zarok", desc: "CogniStar ji bo zarokên 6-9 salî hatiye çêkirin. Sepan ji zarokan hesab, e-name an cih naxwaze. Kirîn, mîheng, parvekirin û girêdanên derveyî li pişt kontrola dêûbavan in. Me sepan bi hişyariya COPPA, GDPR û KVKK sêwirandiye; heke hûn difikirin ku zarokek bi rêya malperê daneyên kesane şandiye, ji me re binivîsin, em ê jê bibin." },
+      { icon: UserX, title: "7. Parastin û jêbirin", desc: "Daneyên li ser cîhazê bi jêbirina profîlê, bi \"Hemû daneyan jê bibe\" di Mîhengan de an bi rakirina sepanê têne jêbirin. Peyamên forma têkiliyê tenê heta ku bersiv were dayîn têne parastin û paşê têne jêbirin. Tomarên kirînê ji hêla Apple, Google û RevenueCat ve li gorî polîtîkayên wan têne parastin." },
+      { icon: Scale, title: "8. Mafên we û guhertin", desc: "Li gorî GDPR û KVKK hûn dikarin bixwazin ku em bigihîjin, rast bikin an jê bibin daneyên kesane yên ku em li ser we digirin (di pratîkê de peyamên formê) û li dijî pêvajoyê îtiraz bikin; ji fodla.media@gmail.com re binivîsin. Hûn dikarin ji desthilata parastina daneyan re jî gilî bikin. Heke polîtîka biguhere, dîroka li jor jî diguhere." },
     ]
   },
   ar: {
-    title: 'سياسة الخصوصية والامتثال لقوانين حماية الأطفال',
-    intro: 'تطبيق CogniStar هو بيئة آمنة تماماً، تعمل دون اتصال بالإنترنت، وخالية من أي تتبع، ومصممة خصيصاً للأطفال. توضح هذه السياسة كيفية حماية خصوصية الأطفال والامتثال للوائح فئات الأطفال في متاجر التطبيقات.',
+    title: "سياسة الخصوصية",
+    intro: "توضح هذه السياسة ما يفعله تطبيق CogniStar وهذا الموقع بالبيانات. باختصار: تعمل اللعبة دون اتصال ولا يغادر الجهاز أي شيء يخص طفلك. آخر تحديث: 25 أكتوبر 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '١. المطور ومراقب البيانات',
-        desc: 'تم تطوير وتشغيل تطبيق CogniStar بواسطة Fodla Media. لأي استفسارات تتعلق بسلامة الأطفال أو هذه السياسة، يرجى التواصل معنا عبر البريد الإلكتروني: fodla.media@gmail.com.'
-      },
-      {
-        icon: UserX,
-        title: '٢. جمع البيانات ومعالجتها',
-        desc: 'نحن لا نجمع أو نخزن أو نشارك أي معلومات شخصية للأطفال أو الكبار. على وجه الخصوص:\n• لا يتم إرسال أي بيانات تسجيل أو حساب أو ملفات تعريفية عبر الإنترنت.\n• لا نطلب بيانات الموقع أو الوصول إلى الكاميرا/الميكروفون.\n• التحقق من المشتريات ومعرفات الأجهزة: نقوم بمعالجة معرفات الأجهزة المجهولة وتاريخ المعاملات فقط للتحقق من الاشتراكات المميزة واستعادة المشتريات. لا يتم ربط هذه البيانات بهويتك أو استخدامها لأغراض التتبع.\n• قاعدة البيانات المحلية: يتم حفظ جميع مستويات التقدم، ونقاط ELO، والجوائز، وأوراق العمل محلياً بالكامل على الجهاز.'
-      },
-      {
-        icon: Lock,
-        title: '٣. الاشتراكات والمدفوعات',
-        desc: 'تتم معالجة الاشتراكات بأمان بواسطة متجر تطبيقات Apple ومتجر Google Play. لا تتلقى Fodla Media أو تطلع على أي تفاصيل لبطاقات الائتمان أو الفواتير الخاصة بك.'
-      },
-      {
-        icon: EyeOff,
-        title: '٤. لا إعلانات ولا تحليلات',
-        desc: 'لضمان السلامة الكاملة للأطفال:\n• لا توجد إعلانات من أي جهة خارجية.\n• لا توجد أدوات تتبع أو تحليلات سلوكية أو إحصائية مدمجة بالتطبيق.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '٥. الامتثال لقوانين COPPA و GDPR',
-        desc: 'نحن نلتزم بصرامة بقانون حماية خصوصية الأطفال على الإنترنت (COPPA) واللائحة العامة لحماية البيانات (GDPR). لا نقوم بجمع أي بيانات من الأطفال دون سن 13 عاماً.'
-      },
-      {
-        icon: Database,
-        title: '٦. الاحتفاظ بالبيانات وحذفها',
-        desc: 'بما أن جميع البيانات مخزنة محلياً، فإن حذف تطبيق CogniStar من جهازك سيؤدي إلى حذف جميع ملفات التقدم والإعدادات المخزنة بشكل دائم.'
-      }
+      { icon: Mail, title: "١. من نحن", desc: "يطوّر CogniStar شركة Fodla Media، وهي المسؤولة عن البيانات المحدودة الموضحة هنا. للأسئلة حول الخصوصية أو سلامة الأطفال: fodla.media@gmail.com." },
+      { icon: Database, title: "٢. ما يبقى على الجهاز", desc: "تُحفظ ملفات الأطفال، والأسماء التي يدخلها الوالد، والتقدم، والإجابات، والإعدادات، وملخصات أنماط اللعب المعروضة في لوحة الوالدين، وأوراق العمل في التخزين المحلي للجهاز. ولا تُرفع إلينا ولا إلى أي جهة أخرى." },
+      { icon: Lock, title: "٣. ما يغادر الجهاز", desc: "لا يستخدم الإنترنت إلا أمران:\n• الاشتراكات: عندما يشتري الوالد الاشتراك المميز أو يستعيده، يعالج متجر Apple أو Google Play ومزوّد الاشتراكات لدينا RevenueCat معرّف شراء مجهول وتفاصيل المنتج والمعاملة وحالة الاشتراك. لا نرى أي بيانات بطاقة، ولا تُرسل أي بيانات للطفل.\n• التحقق من التحديثات: عند تشغيل التطبيق يسأل المتجر عن وجود إصدار أحدث. يُرسل هذا معرّف التطبيق، وكأي طلب عبر الإنترنت عنوان IP للجهاز — ولا شيء عن الطفل. وعند عدم الاتصال يتم تخطيه." },
+      { icon: Globe, title: "٤. هذا الموقع", desc: "إذا استخدمت نموذج التواصل، يُرسل اسمك وبريدك الإلكتروني ورسالتك عبر خدمة Web3Forms إلى بريدنا لنتمكن من الرد؛ وإن فشل الإرسال يُفتح تطبيق البريد لديك. يستخدم الموقع ملف تعريف ارتباط واحداً فقط لتذكّر لغتك، ولا يستخدم ملفات تعريف ارتباط إعلانية أو تحليلية." },
+      { icon: EyeOff, title: "٥. لا إعلانات ولا تحليلات", desc: "لا يعرض التطبيق إعلانات ولا يحتوي على أي أدوات تحليل أو تتبع أو تنميط. ولا نبيع البيانات الشخصية." },
+      { icon: HeartHandshake, title: "٦. الأطفال", desc: "صُمم CogniStar للأطفال من 6 إلى 9 سنوات. لا يطلب التطبيق من الأطفال أي حساب أو بريد إلكتروني أو موقع. وتقع المشتريات والإعدادات والمشاركة والروابط الخارجية خلف تحقق أبوي. صممنا التطبيق مع مراعاة COPPA وGDPR وقانون KVKK التركي؛ وإن اعتقدت أن طفلاً أرسل إلينا بيانات شخصية عبر الموقع فراسلنا وسنحذفها." },
+      { icon: UserX, title: "٧. الاحتفاظ بالبيانات وحذفها", desc: "تُحذف البيانات الموجودة على الجهاز بحذف الملف الشخصي أو باستخدام \"حذف جميع البيانات\" في الإعدادات أو بإزالة التطبيق. ونحتفظ برسائل نموذج التواصل فقط للمدة اللازمة للرد ثم نحذفها. أما سجلات الشراء فتحتفظ بها Apple وGoogle وRevenueCat وفق سياساتها." },
+      { icon: Scale, title: "٨. حقوقك والتغييرات", desc: "بموجب GDPR وKVKK يمكنك أن تطلب الوصول إلى بياناتك الشخصية التي نحتفظ بها (عملياً رسائل نموذج التواصل) أو تصحيحها أو حذفها، والاعتراض على معالجتها؛ راسلنا على fodla.media@gmail.com. ويمكنك أيضاً تقديم شكوى إلى هيئة حماية البيانات. وإذا تغيّرت هذه السياسة يتغيّر التاريخ أعلاه." },
     ]
   },
   fr: {
-    title: 'Politique de Confidentialité & Conformité COPPA',
-    intro: 'CogniStar est un environnement sécurisé, hors ligne et sans aucun suivi, conçu spécifiquement pour les enfants. Cette politique explique comment nous protégeons les enfants et respectons les règles de l\'App Store et du Google Play Store.',
+    title: "Politique de confidentialité",
+    intro: "Cette politique explique ce que l'application CogniStar et ce site font des données. En bref : le jeu fonctionne hors ligne et rien concernant votre enfant ne quitte l'appareil. Dernière mise à jour : 25 octobre 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Développeur & Responsable du Traitement',
-        desc: 'CogniStar est développé et exploité par Fodla Media. Pour toute question concernant la sécurité des enfants ou cette politique, veuillez nous contacter à fodla.media@gmail.com.'
-      },
-      {
-        icon: UserX,
-        title: '2. Collecte & Traitement des Données',
-        desc: 'Nous ne collectons, ne stockons et ne partageons aucune information personnelle concernant les enfants ou les adultes. En particulier :\n• Aucune inscription ou profil n\'est envoyé en ligne.\n• Aucune donnée de localisation ou accès caméra/micro n\'est demandé.\n• Vérification des achats & identifiants d\'appareil : Nous traitons des identifiants d\'appareil anonymes et l\'historique des transactions uniquement pour vérifier les abonnements premium et restaurer les achats. Ces données ne sont pas liées à votre identité ni utilisées pour le suivi.\n• Stockage local : Toutes les étoiles, progression ELO, fiches d\'exercices et récompenses sont sauvegardées à 100% sur l\'appareil.'
-      },
-      {
-        icon: Lock,
-        title: '3. Abonnements & Paiements',
-        desc: 'Les abonnements sont traités de manière sécurisée par l\'App Store d\'Apple et le Google Play Store. Fodla Media ne reçoit, ne visualise ni ne stocke aucune coordonnée bancaire ou de facturation.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. Sans Publicité & Sans Outil d\'Analyse',
-        desc: 'Pour garantir une sécurité maximale aux enfants :\n• Il n\'y a aucune publicité tierce dans l\'application.\n• Aucun SDK d\'analyse, de télémétrie ou de profilage n\'est intégré.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. Conformité COPPA & RGPD',
-        desc: 'Nous respectons strictement la loi COPPA et le RGPD. Nous ne collectons jamais de données personnelles auprès d\'enfants de moins de 13 ans.'
-      },
-      {
-        icon: Database,
-        title: '6. Conservation & Suppression des Données',
-        desc: 'Puisque toutes les données sont stockées sur l\'appareil, vous avez le contrôle total. Supprimer l\'application CogniStar supprime définitivement tous les progrès et paramètres locaux.'
-      }
+      { icon: Mail, title: "1. Qui sommes-nous", desc: "CogniStar est développé par Fodla Media, responsable du traitement des données limitées décrites ici. Questions sur la vie privée ou la sécurité des enfants : fodla.media@gmail.com." },
+      { icon: Database, title: "2. Ce qui reste sur l'appareil", desc: "Profils des enfants, prénoms saisis par un parent, progression, réponses, réglages, résumés de jeu affichés dans le tableau de bord parent et fiches d'exercices sont conservés dans le stockage local de l'appareil. Ils ne nous sont pas envoyés, ni à personne d'autre." },
+      { icon: Lock, title: "3. Ce qui quitte l'appareil", desc: "Seules deux choses utilisent internet :\n• Abonnements : lorsqu'un parent achète ou restaure Premium, l'App Store d'Apple ou Google Play et notre prestataire d'abonnement RevenueCat traitent un identifiant d'achat anonyme, les détails du produit et de la transaction et l'état de l'abonnement. Nous ne voyons jamais les données de carte, et aucune donnée d'enfant n'est envoyée.\n• Vérification des mises à jour : au démarrage, l'application demande au magasin si une version plus récente existe. Cela transmet l'identifiant de l'application et, comme toute requête internet, l'adresse IP de l'appareil — rien sur l'enfant. Hors ligne, la vérification est ignorée." },
+      { icon: Globe, title: "4. Ce site", desc: "Si vous utilisez le formulaire de contact, vos nom, adresse e-mail et message sont transmis via le service Web3Forms à notre boîte de réception afin que nous puissions répondre ; en cas d'échec, votre application de messagerie s'ouvre. Le site utilise un seul cookie qui mémorise votre langue, sans cookie publicitaire ni de mesure d'audience." },
+      { icon: EyeOff, title: "5. Ni publicité, ni analyse", desc: "L'application n'affiche aucune publicité et ne contient aucun SDK d'analyse, de suivi ou de profilage. Nous ne vendons pas de données personnelles." },
+      { icon: HeartHandshake, title: "6. Les enfants", desc: "CogniStar est conçu pour les enfants de 6 à 9 ans. L'application ne demande aux enfants ni compte, ni e-mail, ni localisation. Achats, réglages, partage et liens sortants sont protégés par un contrôle parental. Nous avons conçu l'application en tenant compte de la COPPA, du RGPD et de la loi turque KVKK ; si vous pensez qu'un enfant nous a envoyé des données personnelles via le site, écrivez-nous et nous les supprimerons." },
+      { icon: UserX, title: "7. Conservation et suppression", desc: "Les données de l'appareil sont supprimées en effaçant un profil, via « Supprimer toutes les données » dans les Réglages ou en désinstallant l'application. Les messages du formulaire ne sont conservés que le temps de vous répondre, puis supprimés. Les données d'achat sont conservées par Apple, Google et RevenueCat selon leurs propres politiques." },
+      { icon: Scale, title: "8. Vos droits et modifications", desc: "En vertu du RGPD et de la KVKK, vous pouvez nous demander l'accès, la rectification ou l'effacement des données personnelles que nous détenons sur vous (en pratique, les messages du formulaire) et vous opposer à leur traitement ; écrivez à fodla.media@gmail.com. Vous pouvez aussi saisir votre autorité de protection des données (CNIL en France). Si cette politique change, la date ci-dessus change aussi." },
     ]
   },
   de: {
-    title: 'Datenschutzerklärung & COPPA-Konformität',
-    intro: 'CogniStar ist eine sichere, werbefreie und offline nutzbare Umgebung speziell für Kinder. Diese Erklärung erläutert unseren Schutz der Privatsphäre gemäß den Richtlinien von App Store und Google Play.',
+    title: "Datenschutzerklärung",
+    intro: "Diese Erklärung beschreibt, was die CogniStar-App und diese Website mit Daten tun. Kurz gesagt: Das Spiel läuft offline, und nichts über Ihr Kind verlässt das Gerät. Zuletzt aktualisiert: 25. Oktober 2026.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Entwickler & Datenverantwortlicher',
-        desc: 'CogniStar wird von Fodla Media entwickelt und betrieben. Bei Fragen zum Kinderschutz oder zu dieser Richtlinie wenden Sie sich bitte an fodla.media@gmail.com.'
-      },
-      {
-        icon: UserX,
-        title: '2. Datenerhebung & -verarbeitung',
-        desc: 'Wir sammeln, speichern oder teilen keinerlei personenbezogene Daten von Kindern oder Erwachsenen. Speziell:\n• Keine Registrierung oder Profile werden online übertragen.\n• Keine Standortdaten oder Kamera-/Mikrofonberechtigungen werden abgefragt.\n• Kaufverifizierung & Geräte-IDs: Wir verarbeiten anonyme Geräte-IDs und den Transaktionsverlauf ausschließlich, um Premium-Abonnements zu verifizieren und Käufe wiederherzustellen. Diese Daten werden nicht mit Ihrer Identität verknüpft oder zu Tracking-Zwecken verwendet.\n• Lokale Speicherung: Alle Spielfortschritte, Sterne, ELO-Werte und Arbeitsblätter werden zu 100 % lokal auf dem Gerät gespeichert.'
-      },
-      {
-        icon: Lock,
-        title: '3. Abonnements & Zahlungen',
-        desc: 'Zahlungen für Abonnements werden sicher über den Apple App Store und Google Play Store abgewickelt. Fodla Media erhält oder speichert keine Kreditkarten- oder Rechnungsinformationen.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. Keine Werbung & Keine Analyse-Tools',
-        desc: 'Für maximale Sicherheit der Kinder:\n• Die App ist vollkommen werbefrei.\n• Es sind keine Analyse-, Telemetrie- oder Profiling-SDKs von Drittanbietern integriert.'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. COPPA & DSGVO Konformität',
-        desc: 'Wir halten uns strikt an COPPA (Children\'s Online Privacy Protection Act) und DSGVO. Wir erfassen niemals Daten von Kindern unter 13 Jahren.'
-      },
-      {
-        icon: Database,
-        title: '6. Datenspeicherung & -löschung',
-        desc: 'Da alle Daten auf dem Gerät gespeichert werden, haben Sie die volle Kontrolle. Durch das Löschen der CogniStar-App werden alle lokalen Fortschritte dauerhaft entfernt.'
-      }
+      { icon: Mail, title: "1. Wer wir sind", desc: "CogniStar wird von Fodla Media entwickelt, dem Verantwortlichen für die hier beschriebenen begrenzten Daten. Fragen zu Datenschutz oder Kindersicherheit: fodla.media@gmail.com." },
+      { icon: Database, title: "2. Was auf dem Gerät bleibt", desc: "Kinderprofile, von Eltern eingegebene Namen, Fortschritt, Antworten, Einstellungen, im Eltern-Dashboard gezeigte Spielmuster-Übersichten und Arbeitsblätter liegen im lokalen Speicher des Geräts. Sie werden weder an uns noch an Dritte übertragen." },
+      { icon: Lock, title: "3. Was das Gerät verlässt", desc: "Nur zwei Dinge nutzen das Internet:\n• Abos: Wenn Eltern Premium kaufen oder wiederherstellen, verarbeiten der Apple App Store oder Google Play und unser Abo-Dienstleister RevenueCat eine anonyme Kauf-ID, Produkt- und Transaktionsdaten sowie den Abo-Status. Kartendaten sehen wir nie, und es werden keine Kinderdaten gesendet.\n• Update-Prüfung: Beim Start fragt die App den Store, ob es eine neuere Version gibt. Dabei werden die App-Kennung und, wie bei jeder Internetanfrage, die IP-Adresse des Geräts übermittelt – nichts über das Kind. Offline entfällt die Prüfung." },
+      { icon: Globe, title: "4. Diese Website", desc: "Wenn Sie das Kontaktformular nutzen, werden Name, E-Mail-Adresse und Nachricht über den Dienst Web3Forms an unser Postfach übermittelt, damit wir antworten können; schlägt das fehl, öffnet sich Ihre E-Mail-App. Die Website setzt nur ein Cookie, das Ihre Sprachwahl speichert, und keine Werbe- oder Analyse-Cookies." },
+      { icon: EyeOff, title: "5. Keine Werbung, keine Analyse", desc: "Die App zeigt keine Werbung und enthält keine Analyse-, Tracking- oder Profiling-SDKs. Wir verkaufen keine personenbezogenen Daten." },
+      { icon: HeartHandshake, title: "6. Kinder", desc: "CogniStar ist für Kinder von 6 bis 9 Jahren gemacht. Die App verlangt von Kindern weder Konto noch E-Mail oder Standort. Käufe, Einstellungen, Teilen und Links aus der App heraus liegen hinter einer Elternabfrage. Wir haben die App mit Blick auf COPPA, DSGVO und das türkische KVKK gestaltet; falls Sie glauben, dass uns ein Kind über die Website personenbezogene Daten geschickt hat, schreiben Sie uns, und wir löschen sie." },
+      { icon: UserX, title: "7. Speicherung und Löschung", desc: "Daten auf dem Gerät werden gelöscht, indem Sie ein Profil löschen, in den Einstellungen „Alle Daten löschen“ wählen oder die App entfernen. Nachrichten aus dem Kontaktformular bewahren wir nur so lange auf, wie es für die Antwort nötig ist, und löschen sie dann. Kaufdaten werden von Apple, Google und RevenueCat nach deren eigenen Richtlinien aufbewahrt." },
+      { icon: Scale, title: "8. Ihre Rechte und Änderungen", desc: "Nach DSGVO und KVKK können Sie Auskunft, Berichtigung oder Löschung der personenbezogenen Daten verlangen, die wir über Sie haben (in der Praxis Kontaktformular-Nachrichten), und der Verarbeitung widersprechen; schreiben Sie an fodla.media@gmail.com. Sie können sich auch bei einer Datenschutzaufsichtsbehörde beschweren. Ändert sich diese Erklärung, ändert sich auch das Datum oben." },
     ]
   },
   ru: {
-    title: 'Политика конфиденциальности и соответствие стандартам COPPA',
-    intro: 'Приложение CogniStar создано как безопасная, полностью автономная среда без какого-либо отслеживания. Данная политика объясняет методы защиты данных детей в соответствии с правилами магазинов приложений.',
+    title: "Политика конфиденциальности",
+    intro: "Эта политика объясняет, что приложение CogniStar и этот сайт делают с данными. Коротко: игра работает офлайн, и никакие сведения о вашем ребёнке не покидают устройство. Последнее обновление: 25 октября 2026 г.",
     sections: [
-      {
-        icon: Mail,
-        title: '1. Разработчик и оператор данных',
-        desc: 'CogniStar разработано и управляется Fodla Media. По вопросам защиты детей или политики конфиденциальности пишите на почту: fodla.media@gmail.com.'
-      },
-      {
-        icon: UserX,
-        title: '2. Сбор и обработка данных',
-        desc: 'Мы не собираем, не храним и не передаем третьим лицам личную информацию. В частности:\n• Отсутствует онлайн-регистрация и создание профилей на сервере.\n• Не запрашивается доступ к геолокации, камере или микрофону.\n• Проверка покупок и идентификаторы устройств: Мы обрабатываем анонимные идентификаторы устройств и историю транзаций исключительно для проверки премиум-подписок и восстановления покупок. Эти данные не связаны с вашей личностью и не используются для отслеживания.\n• Локальная БД: Звезды, прогресс ELO, награды и рабочие листы сохраняются исключительно на самом устройстве.'
-      },
-      {
-        icon: Lock,
-        title: '3. Подписки и платежи',
-        desc: 'Оплата подписок безопасно обрабатывается Apple App Store и Google Play Store. Fodla Media не имеет доступа к данным кредитных карт и платежным реквизитам.'
-      },
-      {
-        icon: EyeOff,
-        title: '4. Без рекламы и аналитики',
-        desc: 'Для обеспечения полной безопасности:\n• В приложении полностью отсутствует реклама.\n• Не интегрированы маркетинговые или аналитические сервисы отслеживания (SDK).'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. Соответствие COPPA и GDPR',
-        desc: 'Мы строго соблюдаем законы COPPA и GDPR. Мы никогда не собираем персональные данные детей младше 13 лет.'
-      },
-      {
-        icon: Database,
-        title: '6. Хранение и удаление данных',
-        desc: 'Удаление приложения CogniStar с вашего устройства приведет к безвозвратному удалению всех локально сохраненных результатов и настроек.'
-      }
+      { icon: Mail, title: "1. Кто мы", desc: "CogniStar разрабатывает Fodla Media — оператор ограниченных данных, описанных здесь. Вопросы о конфиденциальности или безопасности детей: fodla.media@gmail.com." },
+      { icon: Database, title: "2. Что остаётся на устройстве", desc: "Профили детей, имена, введённые родителем, прогресс, ответы, настройки, сводки игровых паттернов в родительской панели и рабочие листы хранятся в локальной памяти устройства. Они не загружаются ни нам, ни кому-либо ещё." },
+      { icon: Lock, title: "3. Что покидает устройство", desc: "Интернет используют только две функции:\n• Подписки: когда родитель покупает или восстанавливает Premium, App Store или Google Play и наш поставщик подписок RevenueCat обрабатывают анонимный идентификатор покупки, данные о продукте и транзакции и статус подписки. Данные карт мы не видим, сведения о ребёнке не передаются.\n• Проверка обновлений: при запуске приложение спрашивает магазин, есть ли новая версия. При этом передаётся идентификатор приложения и, как при любом интернет-запросе, IP-адрес устройства — ничего о ребёнке. Без подключения проверка пропускается." },
+      { icon: Globe, title: "4. Этот сайт", desc: "Если вы пользуетесь формой обратной связи, ваше имя, e-mail и сообщение передаются через сервис Web3Forms в наш почтовый ящик, чтобы мы могли ответить; если отправка не удалась, откроется ваше почтовое приложение. Сайт использует один cookie для запоминания языка и не использует рекламные или аналитические cookie." },
+      { icon: EyeOff, title: "5. Без рекламы и аналитики", desc: "В приложении нет рекламы и нет SDK для аналитики, отслеживания или профилирования. Мы не продаём персональные данные." },
+      { icon: HeartHandshake, title: "6. Дети", desc: "CogniStar создан для детей 6–9 лет. Приложение не запрашивает у детей аккаунт, e-mail или местоположение. Покупки, настройки, функция «поделиться» и внешние ссылки защищены родительской проверкой. Приложение разработано с учётом COPPA, GDPR и турецкого закона KVKK; если вы считаете, что ребёнок прислал нам персональные данные через сайт, напишите нам, и мы их удалим." },
+      { icon: UserX, title: "7. Хранение и удаление", desc: "Данные на устройстве удаляются при удалении профиля, через «Удалить все данные» в Настройках или при удалении приложения. Сообщения из формы хранятся только до ответа, затем удаляются. Сведения о покупках хранят Apple, Google и RevenueCat по своим правилам." },
+      { icon: Scale, title: "8. Ваши права и изменения", desc: "Согласно GDPR и KVKK вы можете запросить доступ к вашим персональным данным, которые у нас есть (на практике это сообщения из формы), их исправление или удаление, а также возразить против обработки; пишите на fodla.media@gmail.com. Вы также можете подать жалобу в орган по защите данных. Если политика изменится, изменится и дата выше." },
     ]
   },
   zh: {
-    title: '隐私政策与 COPPA 合规声明',
-    intro: 'CogniStar 致力于为儿童提供安全、离线且零追踪的数字成长环境。本政策阐述了我们如何保护儿童隐私，并符合主流应用商店对儿童类 App 的严格合规要求。',
+    title: "隐私政策",
+    intro: "本政策说明 CogniStar 应用和本网站如何处理数据。简而言之：游戏离线运行，任何关于孩子的信息都不会离开设备。最后更新：2026 年 10 月 25 日。",
     sections: [
-      {
-        icon: Mail,
-        title: '1. 开发者与数据控制方',
-        desc: 'CogniStar 由 Fodla Media 开发并运营。如有关于儿童在线安全或本政策的任何疑问，请通过邮箱 fodla.media@gmail.com 与我们联系。'
-      },
-      {
-        icon: UserX,
-        title: '2. 数据收集与处理',
-        desc: '我们绝不收集、存储或共享任何儿童或成年人的个人数据。具体表现为：\n• 无需在线注册，不收集任何账户或个人资料信息。\n• 不请求位置数据、摄像头或麦克风等敏感权限。\n• 购买验证与设备 ID：我们处理匿名设备标识符和交易历史记录，仅用于验证高级订阅和恢复购买。此数据不会与您的身份相关联，也不会用于追踪。\n• 纯本地存储：所有冒险进度、MMR/ELO 评分、解锁徽章及导出的 PDF 练习册均 100% 仅保存在用户设备上。'
-      },
-      {
-        icon: Lock,
-        title: '3. 订阅与支付安全',
-        desc: '所有高级版订阅和内购交易均由 Apple App Store 和 Google Play 官方安全通道处理。Fodla Media 不会获取、查看或存储任何用户的信用卡卡号及账单信息。'
-      },
-      {
-        icon: EyeOff,
-        title: '4. 纯净无广告与零分析',
-        desc: '为确保极致的儿童体验：\n• 软件内不含任何第三方商业广告。\n• 软件内未接入任何用户画像、行为分析或遥测追踪类第三方 SDK。'
-      },
-      {
-        icon: HeartHandshake,
-        title: '5. 严守 COPPA 与 GDPR 规范',
-        desc: '我们严格遵守美国儿童在线 privacy 保护法（COPPA）和欧盟通用数据保护条例（GDPR），绝不主动收集 13 周岁以下儿童的个人信息。'
-      },
-      {
-        icon: Database,
-        title: '6. 数据保留与销毁',
-        desc: '由于数据均离线存在您的设备中，卸载/删除 CogniStar 应用程序将会永久且不可恢复地清除所有本地的游戏进度及自定义设置。'
-      }
+      { icon: Mail, title: "1. 我们是谁", desc: "CogniStar 由 Fodla Media 开发，Fodla Media 是本政策所述有限数据的控制者。如有隐私或儿童安全方面的问题，请联系：fodla.media@gmail.com。" },
+      { icon: Database, title: "2. 保留在设备上的数据", desc: "儿童档案、家长输入的名字、进度、答案、设置、家长面板中显示的游戏行为摘要以及练习纸都保存在设备的本地存储中，不会上传给我们或任何第三方。" },
+      { icon: Lock, title: "3. 离开设备的数据", desc: "只有两项功能会使用网络：\n• 订阅：家长购买或恢复高级版时，Apple App Store 或 Google Play 以及我们的订阅服务商 RevenueCat 会处理匿名购买标识、产品与交易信息以及订阅状态。我们看不到任何银行卡信息，也不会发送任何儿童数据。\n• 更新检查：应用启动时会询问应用商店是否有新版本。此请求会发送应用标识，以及与任何网络请求一样的设备 IP 地址——不包含任何关于儿童的信息。离线时将跳过检查。" },
+      { icon: Globe, title: "4. 本网站", desc: "如果您使用联系表单，您的姓名、邮箱和留言会通过 Web3Forms 服务发送到我们的邮箱，以便我们回复；如果发送失败，会打开您自己的邮件应用。本网站只使用一个记住语言偏好的 Cookie，不使用广告或分析 Cookie。" },
+      { icon: EyeOff, title: "5. 无广告、无分析", desc: "应用不展示广告，也不包含任何分析、跟踪或用户画像 SDK。我们不出售个人数据。" },
+      { icon: HeartHandshake, title: "6. 儿童", desc: "CogniStar 为 6-9 岁儿童设计。应用不会向儿童索取账号、邮箱或位置。购买、设置、分享以及离开应用的链接均需通过家长验证。我们在设计时考虑了 COPPA、GDPR 和土耳其 KVKK；如果您认为有儿童通过网站向我们发送了个人信息，请联系我们，我们将予以删除。" },
+      { icon: UserX, title: "7. 数据保存与删除", desc: "设备上的数据可通过删除档案、在设置中使用\"删除所有数据\"或卸载应用来删除。联系表单的留言只在回复所需期间保存，之后删除。购买记录由 Apple、Google 和 RevenueCat 按其各自政策保存。" },
+      { icon: Scale, title: "8. 您的权利与变更", desc: "根据 GDPR 和 KVKK，您可以要求查阅、更正或删除我们持有的关于您的个人数据（实际上即联系表单留言），并可反对相关处理；请写信至 fodla.media@gmail.com。您也可以向数据保护机构投诉。若本政策发生变更，上方日期也会随之更新。" },
     ]
-  }
+  },
 };
 
 export default function PrivacyPage() {
@@ -323,7 +147,7 @@ export default function PrivacyPage() {
 
           {/* Details */}
           <div className="mt-16 space-y-10">
-            {t.sections.map((section: any, idx: number) => {
+            {t.sections.map((section, idx) => {
               const Icon = section.icon;
               return (
                 <div 

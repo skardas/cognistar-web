@@ -24,7 +24,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'What is included in the free tier vs. Premium?',
-        a: 'The first 10 levels of the cognitive adventure map are completely free to play. Upgrading to Premium unlocks unlimited access to all 1024 levels, parental dashboard progress graphs, and unlimited custom PDF worksheet generations.'
+        a: 'The first 15 levels of the adventure map are free to play. Premium unlocks all 1024 levels, the parent dashboard and a new printable PDF worksheet once a week.'
       },
       {
         q: 'Does the application require an active internet connection?',
@@ -32,11 +32,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'How can parents generate and print worksheets?',
-        a: 'Navigate to the Parent Portal, select the "Worksheets" section, choose the specific cognitive skills you want to practice, and generate the PDF document. You can print it wirelessly using AirPrint or save it to your device.'
+        a: 'Open the Parent Dashboard in the app (it sits behind a parental check) and create the worksheet. It is built from the areas your child currently finds hardest; you can print it wirelessly with AirPrint or save it to the device.'
       },
       {
         q: 'Can game progress be synced across multiple devices?',
-        a: 'To guarantee absolute child privacy and safety, CogniStar stores all gameplay statistics, MMR ratings, and stars locally on-device. Since we do not run online sync databases, progress cannot be transferred or merged between devices.'
+        a: 'There is no online sync: progress, MMR and stars stay on the device. To move to a new device, create a local backup file in Settings and restore it on the other device.'
       },
       {
         q: 'How does the adaptive difficulty system calculate levels?',
@@ -61,7 +61,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Ücretsiz sürüm ile Premium sürüm arasındaki fark nedir?',
-        a: 'Bilişsel macera haritasının ilk 10 seviyesi tamamen ücretsizdir. Premium\'a geçmek; 1024 seviyenin tamamını, veli analiz raporu grafiklerini ve yazdırılabilir kişiye özel PDF çalışma kağıdı üreticisini açar.'
+        a: 'Macera haritasının ilk 15 seviyesi ücretsizdir. Premium; 1024 seviyenin tamamını, veli panelini ve haftada bir yeni yazdırılabilir PDF çalışma kağıdını açar.'
       },
       {
         q: 'Uygulamayı kullanmak için internet bağlantısı gerekiyor mu?',
@@ -69,11 +69,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Bilişsel çalışma kağıtlarını nasıl oluşturup yazdırabilirim?',
-        a: 'Veli Analiz Paneli\'ne gidin, "Çalışma Kağıtları" sekmesine tıklayın, gelişim gereken bilişsel kategoriyi seçip PDF oluşturun. PDF\'i AirPrint ile doğrudan kablosuz yazdırabilir veya cihazınıza kaydedebilirsiniz.'
+        a: 'Uygulamada Veli Paneli\'ni açın (ebeveyn doğrulamasının arkasındadır) ve çalışma kağıdını oluşturun. Kağıt, çocuğunuzun şu an en çok zorlandığı alanlardan hazırlanır; AirPrint ile kablosuz yazdırabilir veya cihaza kaydedebilirsiniz.'
       },
       {
         q: 'Oyun ilerlemesini farklı cihazlar arasında senkronize edebilir miyim?',
-        a: 'Çocuk gizliliğini en üst düzeyde korumak amacıyla tüm oyun kayıtları, MMR puanları ve rozetler cihazda yerel olarak saklanır. Çevrimiçi sunucu veritabanları kullanılmadığı için ilerleme başka bir cihaza aktarılamaz.'
+        a: 'Çevrimiçi eşitleme yoktur: ilerleme, MMR ve yıldızlar cihazda kalır. Yeni bir cihaza geçmek için Ayarlar\'dan yerel bir yedek dosyası oluşturup diğer cihazda geri yükleyebilirsiniz.'
       },
       {
         q: 'Zorluk seviyesini ayarlayan adaptif sistem nasıl çalışıyor?',
@@ -98,7 +98,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Di navbera guhertoya belaş û Premium de çi ferq heye?',
-        a: '10 astên pêşîn ên serpêhatiyê belaş in. Versiyona Premium hemî 1024 astan, pelên PDF çapkirinê û grafîkên analîza dêûbav vedike.'
+        a: '15 astên pêşîn ên nexşeya serpêhatiyê belaş in. Premium hemû 1024 astan, panela dêûbavan û hefteyê carekê pelê xebatê yê PDF ê nû vedike.'
       },
       {
         q: 'Ji bo lîstinê internet hewce ye?',
@@ -106,11 +106,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Ez çawa dikarim pelên xebatê çap bikim?',
-        a: 'Biçe panela dêûbav, beşê "Pelên Xebatê" hilbijêre, PDF-ê çêbike û bi AirPrint çap bike.'
+        a: 'Di sepanê de Panela Dêûbavan veke (li pişt kontrola dêûbavan e) û pelê xebatê çêbike. Pel ji wan qadan tê amadekirin ku zarokê we niha herî zêde lê zehmetiyê dikişîne; hûn dikarin bi AirPrint çap bikin an li ser cîhazê tomar bikin.'
       },
       {
         q: 'Ez dikarim pêşkeftinê li ser cîhazên din sync bikim?',
-        a: 'Ji bo ewlehiya zarokan, hemî dane li ser cîhazê bi herêmî têne tomar kirin. Ji ber vê yekê veguhastina pêşkeftinê tune ye.'
+        a: 'Hevdemkirina serhêl tune: pêşveçûn, MMR û stêrk li ser cîhazê dimînin. Ji bo derbasbûna cîhazeke nû, di Mîhengan de pelê paşkopiya herêmî çêbike û li cîhaza din vegerîne.'
       },
       {
         q: 'Pergala zehmetiyê ya adaptîf çawa dixebite?',
@@ -135,7 +135,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'ما الفرق بين الإصدار المجاني والإصدار المميز؟',
-        a: 'المستويات العشرة الأولى من خريطة المغامرة مجانية بالكامل. الترقية إلى Premium تفتح جميع المستويات الـ 1024، وتقارير الآباء التحليلية، وتوليد أوراق عمل بصيغة PDF.'
+        a: 'أول 15 مستوى من خريطة المغامرة مجانية. يفتح الاشتراك المميز جميع المستويات الـ 1024 ولوحة الوالدين وورقة عمل PDF جديدة قابلة للطباعة مرة كل أسبوع.'
       },
       {
         q: 'هل يتطلب التطبيق اتصالاً بالإنترنت؟',
@@ -143,11 +143,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'كيف يمكنني طباعة أوراق العمل التعليمية؟',
-        a: 'ادخل إلى بوابة الآباء، اختر قسم "أوراق العمل"، حدد المهارة المعرفية المطلوبة، وقم بتوليد ملف PDF لطباعته لاسلكياً عبر AirPrint أو حفظه على جهازك.'
+        a: 'افتح لوحة الوالدين في التطبيق (وهي خلف تحقق أبوي) وأنشئ ورقة العمل. تُعدّ الورقة من المجالات التي يجدها طفلك الأصعب حالياً، ويمكنك طباعتها لاسلكياً عبر AirPrint أو حفظها على الجهاز.'
       },
       {
         q: 'هل يمكنني مزامنة تقدم اللعب بين الأجهزة؟',
-        a: 'لحماية خصوصية الأطفال، تُحفظ جميع البيانات ونقاط ELO محلياً على الجهاز فقط. لا توجد قواعد بيانات سحابية، لذا لا يمكن نقل التقدم بين الأجهزة.'
+        a: 'لا توجد مزامنة عبر الإنترنت: يبقى التقدم ونقاط MMR والنجوم على الجهاز. للانتقال إلى جهاز جديد، أنشئ ملف نسخ احتياطي محلي من الإعدادات واستعده على الجهاز الآخر.'
       },
       {
         q: 'كيف يقوم نظام الصعوبة التكيفي بتحديد المستويات؟',
@@ -172,7 +172,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Quelle est la différence entre l\'offre gratuite et l\'offre Premium ?',
-        a: 'Les 10 premiers niveaux sont gratuits. L\'offre Premium débloque l\'accès aux 1024 niveaux, aux graphiques de progression et à la génération de PDF imprimables.'
+        a: 'Les 15 premiers niveaux de la carte d\'aventure sont gratuits. Premium débloque les 1024 niveaux, le tableau de bord parent et une nouvelle fiche PDF imprimable une fois par semaine.'
       },
       {
         q: 'L\'application fonctionne-t-elle sans connexion Internet ?',
@@ -180,11 +180,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Comment imprimer les fiches d\'exercices ?',
-        a: 'Dans l\'espace parents, allez dans l\'onglet "Fiches d\'exercices", sélectionnez une compétence et téléchargez le PDF. Vous pouvez l\'imprimer via AirPrint.'
+        a: 'Ouvrez le tableau de bord parent dans l\'application (protégé par un contrôle parental) et créez la fiche. Elle est construite à partir des domaines que votre enfant trouve actuellement les plus difficiles ; vous pouvez l\'imprimer sans fil avec AirPrint ou l\'enregistrer sur l\'appareil.'
       },
       {
         q: 'Puis-je synchroniser la progression sur plusieurs appareils ?',
-        a: 'Par souci de confidentialité, les progrès sont enregistrés uniquement sur l\'appareil. Aucun compte en ligne n\'est requis, la synchronisation est donc impossible.'
+        a: 'Il n\'y a pas de synchronisation en ligne : progression, MMR et étoiles restent sur l\'appareil. Pour changer d\'appareil, créez un fichier de sauvegarde local dans les Réglages et restaurez-le sur l\'autre appareil.'
       },
       {
         q: 'Comment fonctionne l\'ajustement automatique de la difficulté ?',
@@ -209,7 +209,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Was ist in der kostenlosen Version enthalten?',
-        a: 'Die ersten 10 Level sind kostenlos. Premium schaltet alle 1024 Level, den unbegrenzten PDF-Arbeitsblatt-Export und detaillierte Elternberichte frei.'
+        a: 'Die ersten 15 Level der Abenteuerkarte sind kostenlos. Premium schaltet alle 1024 Level, das Eltern-Dashboard und einmal pro Woche ein neues druckbares PDF-Arbeitsblatt frei.'
       },
       {
         q: 'Benötigt die App eine Internetverbindung?',
@@ -217,11 +217,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Wie drucke ich die Arbeitsblätter aus?',
-        a: 'Gehen Sie in den Elternbereich, wählen Sie "Arbeitsblätter", klicken Sie auf ein Thema und generieren Sie das PDF. Drucken Sie es direkt per WLAN aus.'
+        a: 'Öffnen Sie in der App das Eltern-Dashboard (hinter einer Elternabfrage) und erstellen Sie das Arbeitsblatt. Es entsteht aus den Bereichen, die Ihrem Kind gerade am schwersten fallen; Sie können es per AirPrint drucken oder auf dem Gerät speichern.'
       },
       {
         q: 'Kann ich den Fortschritt auf andere Geräte übertragen?',
-        a: 'Zum Schutz der Privatsphäre werden alle Daten lokal auf dem Gerät gespeichert. Es gibt keine Online-Synchronisierung, daher ist kein Transfer möglich.'
+        a: 'Es gibt keine Online-Synchronisierung: Fortschritt, MMR und Sterne bleiben auf dem Gerät. Für ein neues Gerät erstellen Sie in den Einstellungen eine lokale Sicherungsdatei und stellen sie auf dem anderen Gerät wieder her.'
       },
       {
         q: 'Wie funktioniert die automatische Anpassung der Schwierigkeit?',
@@ -246,7 +246,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Что входит в бесплатную версию?',
-        a: 'Первые 10 уровней приключений полностью бесплатны. Премиум открывает доступ ко всем 1024 уровням, экспорту PDF-заданий и статистике.'
+        a: 'Первые 15 уровней карты приключений бесплатны. Premium открывает все 1024 уровня, родительскую панель и новый PDF-лист для печати раз в неделю.'
       },
       {
         q: 'Нужен ли интернет для работы приложения?',
@@ -254,11 +254,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: 'Как распечатать развивающие задания?',
-        a: 'Перейдите в кабинет родителей, выберите раздел "Рабочие листы", выберите тему и скачайте PDF для отправки на печать.'
+        a: 'Откройте в приложении родительскую панель (она защищена родительской проверкой) и создайте рабочий лист. Он составляется из тем, которые сейчас даются ребёнку труднее всего; его можно распечатать через AirPrint или сохранить на устройстве.'
       },
       {
         q: 'Можно ли синхронизировать прогресс между устройствами?',
-        a: 'В целях конфиденциальности все данные хранятся локально на устройстве. Без онлайн-аккаунтов перенос прогресса невозможен.'
+        a: 'Онлайн-синхронизации нет: прогресс, MMR и звёзды остаются на устройстве. Чтобы перейти на новое устройство, создайте локальную резервную копию в Настройках и восстановите её на другом устройстве.'
       },
       {
         q: 'Как система подстраивает сложность заданий?',
@@ -283,7 +283,7 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: '免费版与 Premium 高级版相比包含哪些内容？',
-        a: '冒险地图的前 10 个关卡完全免费。升级至 Premium 将解锁全部 1024 个挑战关卡、无限量 PDF 练习册导出以及家长端分析图表。'
+        a: '冒险地图的前 15 关可免费游玩。高级版解锁全部 1024 关、家长面板，并且每周可生成一份新的可打印 PDF 练习纸。'
       },
       {
         q: '使用 App 时需要保持网络连接吗？',
@@ -291,11 +291,11 @@ const supportTranslations: Record<string, any> = {
       },
       {
         q: '如何打印生成的 PDF 练习册？',
-        a: '进入家长控制台，选择“纸质练习册”选项，挑选薄弱认知类别即可一键生成 PDF 文本。您可通过系统隔空打印（AirPrint）或保存至本地打印。'
+        a: '在应用中打开家长面板（需通过家长验证）并生成练习纸。练习纸根据孩子当前最薄弱的领域生成；可通过 AirPrint 无线打印或保存到设备。'
       },
       {
         q: '我可以在多台设备间同步游戏进度吗？',
-        a: '为了绝对保障儿童个人隐私，我们没有提供云端数据库同步服务。所有进度均 100% 仅存在设备本地，因此进度无法转移或合并。'
+        a: '没有在线同步：进度、MMR 和星星都保留在设备上。如需换新设备，请在设置中创建本地备份文件，然后在另一台设备上恢复。'
       },
       {
         q: 'App 的智能难度递进系统是如何运作的？',

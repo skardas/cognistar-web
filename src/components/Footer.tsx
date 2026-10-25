@@ -22,10 +22,13 @@ export default function Footer() {
 
           {/* Legal / Pages */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium">
-            <Link href="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+            {/* The labels read Privacy • Terms • Support; "Privacy" used to go to
+                the home page and "Terms" to the privacy policy, and there was
+                no terms page at all. */}
+            <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               {t('links').split('•')[0].trim()}
             </Link>
-            <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Link href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">
               {t('links').split('•')[1].trim()}
             </Link>
             <Link href="/support" className="hover:text-slate-900 dark:hover:text-white transition-colors">
