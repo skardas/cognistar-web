@@ -102,17 +102,16 @@
   "Gallery": {
     "title": "App-Screenshots-Tour",
     "subtitle": "Sehen Sie sich die echten hochauflösenden Screenshots in Ihrer gewählten Sprache an.",
-    "s1": "Abenteuerkarte",
-    "s2a": "Formen-Logik (Einfach)",
-    "s2b": "Optik & Laser (Schwer)",
-    "s2c": "3D Isometrische Schatten (Schwer)",
-    "s2d": "Programmierschleife (Schwer)",
-    "s3": "Kognitive Kategorien",
-    "s4": "Abzeichen & Trophäen",
-    "s5": "Avatar-Laden",
-    "s6": "Tägliches Aufwärmen",
-    "s7": "Fortschrittsberichte",
-    "s8": "Premium-System"
+    "home": "Startseite",
+    "analogy": "Bildanalogie",
+    "matrix": "Matrix-Rätsel",
+    "fold": "Papierfalten",
+    "cube": "Würfelnetze",
+    "map": "Abenteuerkarte",
+    "parent": "Fortschrittsberichte",
+    "badges": "Abzeichen & Trophäen",
+    "store": "Belohnungsladen",
+    "warmup": "Tägliches Aufwärmen"
   },
   "Categories": {
     "title": "144 spezialisierte Gehirntrainingskategorien",

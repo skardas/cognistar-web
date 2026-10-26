@@ -102,17 +102,16 @@
   "Gallery": {
     "title": "Galerie d'Écrans de l'App",
     "subtitle": "Parcourez les captures d'écran réelles en haute résolution dans la langue choisie.",
-    "s1": "Carte d'Aventure",
-    "s2a": "Logique des Formes (Facile)",
-    "s2b": "Optique & Lasers (Difficile)",
-    "s2c": "Ombres Isométriques 3D (Difficile)",
-    "s2d": "Boucle de Codage (Difficile)",
-    "s3": "Catégories Cognitives",
-    "s4": "Badges & Trophées",
-    "s5": "Boutique d'Avatars",
-    "s6": "Échauffement Quotidien",
-    "s7": "Rapports Espace Parents",
-    "s8": "Système Premium"
+    "home": "Accueil",
+    "analogy": "Analogie visuelle",
+    "matrix": "Énigme de matrice",
+    "fold": "Pliage de papier",
+    "cube": "Patrons de cube",
+    "map": "Carte d'Aventure",
+    "parent": "Rapports Espace Parents",
+    "badges": "Badges & Trophées",
+    "store": "Boutique de récompenses",
+    "warmup": "Échauffement Quotidien"
   },
   "Categories": {
     "title": "144 Catégories de Jeux Cérébraux",

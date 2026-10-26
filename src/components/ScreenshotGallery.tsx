@@ -12,17 +12,16 @@ export default function ScreenshotGallery() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const screens = [
-    { id: '1_adventure_map', label: t('s1') },
-    { id: '2a_gameplay_logic', label: t('s2a') },
-    { id: '2b_gameplay_laser', label: t('s2b') },
-    { id: '2c_gameplay_isometric', label: t('s2c') },
-    { id: '2d_gameplay_coding', label: t('s2d') },
-    { id: '3_parent_dashboard', label: t('s7') },
-    { id: '4_premium_paywall', label: t('s8') },
-    { id: '5_categories_map', label: t('s3') },
-    { id: '6_badges_trophies', label: t('s4') },
-    { id: '7_accessories_shop', label: t('s5') },
-    { id: '8_daily_warmup', label: t('s6') }
+    { id: 'home', label: t('home') },
+    { id: 'game_visual_analogy', label: t('analogy') },
+    { id: 'game_matrix', label: t('matrix') },
+    { id: 'game_paper_fold', label: t('fold') },
+    { id: 'game_cube_net', label: t('cube') },
+    { id: 'adventure_map', label: t('map') },
+    { id: 'parent_dashboard', label: t('parent') },
+    { id: 'badges', label: t('badges') },
+    { id: 'reward_store', label: t('store') },
+    { id: 'daily_warmup', label: t('warmup') }
   ];
 
   const handleScroll = (direction: 'left' | 'right') => {
@@ -86,10 +85,13 @@ export default function ScreenshotGallery() {
                   {/* Dynamic Island */}
                   <div className="absolute top-2.5 left-1/2 z-30 h-3 w-16 -translate-x-1/2 rounded-full bg-black" />
                   
+                  {/* Status strip: the captures start below the status bar */}
+                  <div className="absolute inset-x-0 top-0 h-7 bg-[#a9d8ff]" />
+
                   {/* Screenshot Image */}
-                  <div className="absolute inset-0 z-10 bg-slate-950">
+                  <div className="absolute inset-x-0 bottom-0 top-7 z-10 bg-slate-950">
                     <Image
-                      src={`/screenshots/${locale}/iphone_6_7/${screen.id}.png`}
+                      src={`/screenshots/${locale}/phone/${screen.id}.webp`}
                       alt={screen.label}
                       fill
                       sizes="220px"

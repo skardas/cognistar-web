@@ -54,10 +54,13 @@ export default function DeviceMockup() {
           {/* Speaker / Dynamic Island */}
           <div className="absolute top-3 left-1/2 z-30 h-4 w-24 -translate-x-1/2 rounded-full bg-black" />
           
+          {/* Status strip: the captures start below the status bar */}
+          <div className="absolute inset-x-0 top-0 h-9 bg-[#a9d8ff]" />
+
           {/* Screenshot */}
-          <div className="absolute inset-0 z-10">
+          <div className="absolute inset-x-0 bottom-0 top-9 z-10">
             <Image
-              src={`/screenshots/${locale}/iphone_6_7/1_adventure_map.png`}
+              src={`/screenshots/${locale}/phone/adventure_map.webp`}
               alt="CogniStar iOS Map View"
               fill
               className="object-cover pointer-events-none"
@@ -80,10 +83,13 @@ export default function DeviceMockup() {
           {/* Camera Punchhole */}
           <div className="absolute top-3.5 left-1/2 z-30 h-3 w-3 -translate-x-1/2 rounded-full bg-black" />
 
+          {/* Status strip: the captures start below the status bar */}
+          <div className="absolute inset-x-0 top-0 h-9 bg-[#a9d8ff]" />
+
           {/* Screenshot */}
-          <div className="absolute inset-0 z-10">
+          <div className="absolute inset-x-0 bottom-0 top-9 z-10">
             <Image
-              src={`/screenshots/${locale}/android_phone/2a_gameplay_logic.png`}
+              src={`/screenshots/${locale}/phone/game_visual_analogy.webp`}
               alt="CogniStar Android Gameplay"
               fill
               className="object-cover pointer-events-none"

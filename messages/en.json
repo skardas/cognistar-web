@@ -102,17 +102,16 @@
   "Gallery": {
     "title": "App Screenshot Tour",
     "subtitle": "Browse through the actual high-resolution app screenshots in your selected language.",
-    "s1": "Adventure Map",
-    "s2a": "Shape Logic (Easy)",
-    "s2b": "Optics & Lasers (Hard)",
-    "s2c": "3D Isometric Shadows (Hard)",
-    "s2d": "Coding Loop (Hard)",
-    "s3": "Cognitive Categories",
-    "s4": "Badges & Trophies",
-    "s5": "Avatar Shop",
-    "s6": "Daily Warm-up",
-    "s7": "Parent Dashboard",
-    "s8": "Premium System"
+    "home": "Home",
+    "analogy": "Visual Analogy",
+    "matrix": "Matrix Puzzle",
+    "fold": "Paper Folding",
+    "cube": "Cube Nets",
+    "map": "Adventure Map",
+    "parent": "Parent Dashboard",
+    "badges": "Badges & Trophies",
+    "store": "Reward Shop",
+    "warmup": "Daily Warm-up"
   },
   "Categories": {
     "title": "144 Specialized Brain Game Categories",

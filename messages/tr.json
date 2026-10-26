@@ -102,17 +102,16 @@
   "Gallery": {
     "title": "Ekran Görüntüleri Turu",
     "subtitle": "Seçtiğiniz dildeki gerçek yüksek çözünürlüklü uygulama ekranlarını inceleyin.",
-    "s1": "Macera Haritası",
-    "s2a": "Şekil Mantığı (Kolay)",
-    "s2b": "Optik & Lazerler (Zor)",
-    "s2c": "3D İzometrik Gölgeler (Zor)",
-    "s2d": "Kodlama Döngüsü (Zor)",
-    "s3": "Bilişsel Kategoriler",
-    "s4": "Rozetler & Başarılar",
-    "s5": "Avatar Mağazası",
-    "s6": "Günün Egzersizi",
-    "s7": "Veli Rapor Paneli",
-    "s8": "Premium Sistemi"
+    "home": "Ana Sayfa",
+    "analogy": "Görsel Analoji",
+    "matrix": "Matris Bulmacası",
+    "fold": "Kâğıt Katlama",
+    "cube": "Küp Açılımı",
+    "map": "Macera Haritası",
+    "parent": "Veli Rapor Paneli",
+    "badges": "Rozetler & Başarılar",
+    "store": "Ödül Mağazası",
+    "warmup": "Günün Egzersizi"
   },
   "Categories": {
     "title": "144 Özel Zeka Oyunu Kategorisi",

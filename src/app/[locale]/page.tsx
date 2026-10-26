@@ -48,7 +48,7 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col overflow-x-hidden bg-slate-50 dark:bg-slate-950 font-sans antialiased text-slate-800 dark:text-slate-200 transition-colors duration-300">
       <Header />
 
-      <main className="flex-1">
+      <main className="relative flex-1 overflow-x-clip">
         
         {/* Ambient background glow */}
         <div className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl pointer-events-none" />
@@ -417,8 +417,8 @@ export default function HomePage() {
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950">
                   <Image 
                     fill
-                    className="object-cover opacity-90 select-none pointer-events-none"
-                    src={`/screenshots/${locale}/android_tablet/3_parent_dashboard.png`} 
+                    className="object-cover object-top opacity-90 select-none pointer-events-none"
+                    src={`/screenshots/${locale}/tablet/parent_dashboard.webp`} 
                     alt="CogniStar Parent Dashboard PDF"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
